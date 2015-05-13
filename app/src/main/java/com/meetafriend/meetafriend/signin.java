@@ -2,11 +2,13 @@ package com.meetafriend.meetafriend;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Gallery;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -23,8 +25,8 @@ public class signin extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-        Gallery homeGalery = (Gallery) findViewById(R.id.gallery);
-
+        ImageView homeGalery = (ImageView) findViewById(R.id.gallery);
+        homeGalery.setImageResource(R.drawable.signin2);
 
 
     }
