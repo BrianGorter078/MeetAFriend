@@ -1,18 +1,32 @@
 package com.meetafriend.meetafriend;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Gallery;
+import android.widget.TextView;
 
 
-public class home extends Activity {
+public class signin extends Activity {
+
+    String loginUsername = "Brian";
+    String LoginPassword = "123";
+    String inputUsername;
+    String inputPassword;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_signin);
+        Gallery homeGalery = (Gallery) findViewById(R.id.gallery);
+
+
+
     }
 
 
@@ -36,5 +50,25 @@ public class home extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void login(View view) {
+
+        TextView username = (TextView) findViewById(R.id.username);
+        TextView password = (TextView) findViewById(R.id.password);
+
+        inputUsername = username.getText().toString();
+        inputPassword = password.getText().toString();
+
+        if(inputUsername == loginUsername && inputPassword == LoginPassword);
+        {
+            Intent intent = new Intent(this, home.class);
+            startActivity(intent);
+        }
+
+    }
+
+    public void register(View view) {
+
     }
 }
