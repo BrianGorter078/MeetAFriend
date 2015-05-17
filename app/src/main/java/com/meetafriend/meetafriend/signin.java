@@ -25,8 +25,8 @@ public class signin extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-        ImageView homeGalery = (ImageView) findViewById(R.id.gallery);
-        homeGalery.setImageResource(R.drawable.signin2);
+//        ImageView homeGalery = (ImageView) findViewById(R.id.gallery);
+//        homeGalery.setImageResource(R.drawable.signin2);
 
 
     }
