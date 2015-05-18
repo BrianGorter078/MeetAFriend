@@ -20,6 +20,14 @@
             android:name=".Home"
             android:label="@string/title_activity_home" >
         </activity>
+        <activity
+            android:name=".Settings"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name=".Chats"
+            android:label="@string/title_activity_chats" >
+        </activity>
     </application>
 
 </manifest>
