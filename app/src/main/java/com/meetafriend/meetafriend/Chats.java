@@ -1,12 +1,13 @@
 package com.meetafriend.meetafriend;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class Chats extends ActionBarActivity {
+public class Chats extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
