@@ -69,6 +69,10 @@ public class signin extends Activity {
         } else {
             
         }
+        else
+        {
+            username.setText("Fout!!");
+        }
 
 
 
