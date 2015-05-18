@@ -62,11 +62,13 @@ public class signin extends Activity {
         inputUsername = username.getText().toString();
         inputPassword = password.getText().toString();
 
-        if(inputUsername == loginUsername && inputPassword == LoginPassword);
+        if(inputUsername == loginUsername && inputPassword == LoginPassword)
         {
             Intent intent = new Intent(this, Home.class);
             startActivity(intent);
         }
+
+
 
     }
 
