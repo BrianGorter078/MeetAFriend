@@ -66,8 +66,6 @@ public class signin extends Activity {
         {
             Intent intent = new Intent(this, Home.class);
             startActivity(intent);
-        } else {
-            
         }
         else
         {
