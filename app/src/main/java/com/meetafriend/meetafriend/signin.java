@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class signin extends Activity {
+public class Signin extends Activity {
 
     String loginUsername = "Brian";
     String LoginPassword = "123";
