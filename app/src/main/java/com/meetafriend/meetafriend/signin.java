@@ -64,7 +64,7 @@ public class signin extends Activity {
 
         if(inputUsername == loginUsername && inputPassword == LoginPassword);
         {
-            Intent intent = new Intent(this, home.class);
+            Intent intent = new Intent(this, Home.class);
             startActivity(intent);
         }
 
