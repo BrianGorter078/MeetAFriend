@@ -1,10 +1,12 @@
 package com.meetafriend.meetafriend;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Home extends Activity {
@@ -36,5 +38,25 @@ public class Home extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void friends(View view) {
+        Intent intent = new Intent(this, Friends.class);
+        startActivity(intent);
+    }
+
+    public void home(View view) {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
+    public void settings(View view) {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+
+    public void meetSomeone(View view) {
+        Intent intent = new Intent(this, Found.class);
+        startActivity(intent);
     }
 }

@@ -61,15 +61,19 @@ public class Signin extends Activity {
 
         inputUsername = username.getText().toString();
         inputPassword = password.getText().toString();
+        inputUsername = inputUsername.trim();
 
-        if(inputUsername == loginUsername && inputPassword == LoginPassword)
+        System.out.println(inputUsername + " = " + loginUsername);
+        System.out.println(inputPassword + " = " + LoginPassword);
+
+        if(inputUsername.equals(loginUsername) && inputPassword.equals(LoginPassword))
         {
             Intent intent = new Intent(this, Home.class);
             startActivity(intent);
         }
         else
         {
-            username.setText("Fout!! You fail bitch! HUEHUEHUEHUE");
+            username.setText("");
         }
 
 
