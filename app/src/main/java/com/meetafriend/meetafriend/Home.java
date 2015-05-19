@@ -20,7 +20,7 @@ public class Home extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button button = (Button) findViewById(R.id.home);
+        Button button = (Button) findViewById(R.id.Home);
         button.setPaintFlags(button.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
     }
