@@ -45,12 +45,6 @@ public class signin extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-<<<<<<< HEAD
-
-
-
-
-=======
         un = (EditText) findViewById(R.id.username);
         pw = (EditText) findViewById(R.id.password);
         ok = (Button) findViewById(R.id.button);
@@ -90,7 +84,6 @@ public class signin extends Activity {
 //                }
 //            }
 //        });
->>>>>>> origin/master
     }
 
     @Override
@@ -117,34 +110,8 @@ public class signin extends Activity {
 
     public void login(View view) {
 
-<<<<<<< HEAD
        Intent intent = new Intent(this,Home.class);
         startActivity(intent);
-=======
-        TextView username = (TextView) findViewById(R.id.username);
-        TextView password = (TextView) findViewById(R.id.password);
-
-
-
-        inputUsername = username.getText().toString();
-        inputPassword = password.getText().toString();
-        inputUsername = inputUsername.trim();
-
-        System.out.println(inputUsername + " = " + loginUsername);
-        System.out.println(inputPassword + " = " + LoginPassword);
-
-        if(inputUsername.equals(loginUsername) && inputPassword.equals(LoginPassword))
-        {
-            Intent intent = new Intent(this, Home.class);
-            startActivity(intent);
-        }
-        else
-        {
-            username.setText("");
-        }
->>>>>>> origin/master
-
-
 
     }
 
