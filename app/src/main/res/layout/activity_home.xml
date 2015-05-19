@@ -47,7 +47,7 @@
             android:text="@string/home"
             android:id="@+id/Home"
             android:onClick="home"
-            android:background="@null"
+            android:background="@drawable/button"
             android:layout_weight="0.56" />
 
         <Button
