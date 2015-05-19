@@ -32,10 +32,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/showNotifications"
         android:id="@+id/showNotifications"
+        android:paddingTop="3dp"
         android:layout_below="@+id/notifications"
-        android:layout_alignRight="@+id/notifications"
-        android:layout_alignEnd="@+id/notifications"
-        android:paddingTop="3dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Switch
         android:layout_width="wrap_content"
@@ -63,10 +63,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/findFriends"
         android:id="@+id/findFriends"
+        android:paddingTop="3dp"
         android:layout_below="@+id/finds"
-        android:layout_alignRight="@+id/notifications"
-        android:layout_alignEnd="@+id/notifications"
-        android:paddingTop="3dp" />
+        android:layout_alignRight="@+id/showNotifications"
+        android:layout_alignEnd="@+id/showNotifications" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,10 +74,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/onlyPicture"
         android:id="@+id/onlyPicture"
+        android:paddingTop="3dp"
         android:layout_below="@+id/findFriends"
-        android:layout_alignRight="@+id/findFriends"
-        android:layout_alignEnd="@+id/findFriends"
-        android:paddingTop="3dp" />
+        android:layout_alignLeft="@+id/findFriends"
+        android:layout_alignStart="@+id/findFriends" />
 
     <Switch
         android:layout_width="wrap_content"
@@ -114,8 +114,8 @@
         android:id="@+id/textView2"
         android:paddingTop="3dp"
         android:layout_below="@+id/onlyPicture"
-        android:layout_alignRight="@+id/onlyPicture"
-        android:layout_alignEnd="@+id/onlyPicture" />
+        android:layout_alignLeft="@+id/onlyPicture"
+        android:layout_alignStart="@+id/onlyPicture" />
 
     <Switch
         android:layout_width="wrap_content"
