@@ -28,4 +28,6 @@
     <string name="searchFor"><b>Search for:</b></string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="searchRadius"><b>Search Radius</b></string>
+    <string name="kilometers">0 KM</string>
 </resources>
