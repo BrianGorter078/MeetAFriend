@@ -2,11 +2,13 @@ package com.meetafriend.meetafriend;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 
 public class Home extends Activity {
@@ -15,6 +17,10 @@ public class Home extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Button b = (Button) findViewById(R.id.Home);
+        b.setPaintFlags(b.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
+
     }
 
 
