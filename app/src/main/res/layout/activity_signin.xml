@@ -19,7 +19,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/password"
             android:layout_alignEnd="@+id/password"
-            android:background="@drawable/button"
+            android:background="@drawable/signinbutton"
             android:layout_marginTop="1dp" />
 
         <Button
@@ -32,7 +32,7 @@
             android:layout_alignTop="@+id/button"
             android:layout_alignLeft="@+id/password"
             android:layout_alignStart="@+id/password"
-            android:background="@drawable/button"
+            android:background="@drawable/signinbutton"
             android:layout_marginTop="1dp" />
 
         <EditText
