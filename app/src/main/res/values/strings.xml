@@ -30,4 +30,6 @@
     <string name="female">Female</string>
     <string name="searchRadius"><b>Search Radius</b></string>
     <string name="kilometers">0 KM</string>
+    <string name="googlePlay">Sign in via Google</string>
+    <string name="meetafriend">MeetAFriend</string>
 </resources>

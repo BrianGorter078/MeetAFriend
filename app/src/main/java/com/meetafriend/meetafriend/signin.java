@@ -2,22 +2,13 @@ package com.meetafriend.meetafriend;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Paint;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Gallery;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-
-import java.util.ArrayList;
 
 
 public class signin extends Activity {
@@ -47,7 +38,7 @@ public class signin extends Activity {
         setContentView(R.layout.activity_signin);
         un = (EditText) findViewById(R.id.username);
         pw = (EditText) findViewById(R.id.password);
-        ok = (Button) findViewById(R.id.button);
+        ok = (Button) findViewById(R.id.loginButton);
         error = (TextView) findViewById(R.id.error);
 //        ok.setOnClickListener(new View.OnClickListener() {
 //
