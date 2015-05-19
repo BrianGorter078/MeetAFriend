@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,9 +20,14 @@ public class Home extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+<<<<<<< HEAD
         Button b = (Button) findViewById(R.id.Home);
         b.setPaintFlags(b.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
 
+=======
+        Button button = (Button) findViewById(R.id.home);
+        button.setPaintFlags(button.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+>>>>>>> origin/master
     }
 
 

@@ -20,7 +20,7 @@ import org.apache.http.message.BasicNameValuePair;
 import java.util.ArrayList;
 
 
-public class Signin extends Activity {
+public class signin extends Activity {
 
 //    Object[] object;
 
@@ -45,12 +45,54 @@ public class Signin extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+<<<<<<< HEAD
 
 
 
 
+=======
+        un = (EditText) findViewById(R.id.username);
+        pw = (EditText) findViewById(R.id.password);
+        ok = (Button) findViewById(R.id.button);
+        error = (TextView) findViewById(R.id.error);
+//        ok.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//
+//            public void onClick(View view) {
+//                System.out.println("1...");
+//                ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+//                postParameters.add(new BasicNameValuePair("name", un.getText().toString()));
+//                postParameters.add(new BasicNameValuePair("password", pw.getText().toString()));
+//
+////String valid = "1";
+//                String response = null;
+//                try {
+//                    response = CustomHttpClient.executeHttpPost("http://boermedia.com/maf/connect.php", postParameters);  //Enetr Your remote PHP,ASP, Servlet file link
+//                    System.out.println("2...");
+//                    String res = response.toString();
+//                    System.out.println("3...");
+//// res = res.trim();
+//                    res = res.replaceAll("\\s+", "");
+////error.setText(res);
+//                    System.out.println("4...");
+//                    if (res.equals("1"))
+//                        error.setText("Correct Username or Password");
+//                    else
+//                        error.setText("Sorry!! Incorrect Username or Password");
+//
+//                } catch (Exception e) {
+//                    System.out.println("TEST...");
+//                    un.setText(e.toString());
+//                    System.out.println(e.toString());
+//                    e.printStackTrace();
+//
+//                }
+//            }
+//        });
+>>>>>>> origin/master
     }
-    
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -75,8 +117,32 @@ public class Signin extends Activity {
 
     public void login(View view) {
 
+<<<<<<< HEAD
        Intent intent = new Intent(this,Home.class);
         startActivity(intent);
+=======
+        TextView username = (TextView) findViewById(R.id.username);
+        TextView password = (TextView) findViewById(R.id.password);
+
+
+
+        inputUsername = username.getText().toString();
+        inputPassword = password.getText().toString();
+        inputUsername = inputUsername.trim();
+
+        System.out.println(inputUsername + " = " + loginUsername);
+        System.out.println(inputPassword + " = " + LoginPassword);
+
+        if(inputUsername.equals(loginUsername) && inputPassword.equals(LoginPassword))
+        {
+            Intent intent = new Intent(this, Home.class);
+            startActivity(intent);
+        }
+        else
+        {
+            username.setText("");
+        }
+>>>>>>> origin/master
 
 
 
