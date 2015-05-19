@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="70dp"
         android:onClick="meetSomeone"
-        android:background="@drawable/button"/>
+        android:background="@null"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -57,7 +57,7 @@
             android:text="@string/friends"
             android:id="@+id/Friends"
             android:onClick="friends"
-            android:background="@null"
+            android:background="@drawable/button"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/MeetSomeone"
             android:layout_toEndOf="@+id/MeetSomeone"
