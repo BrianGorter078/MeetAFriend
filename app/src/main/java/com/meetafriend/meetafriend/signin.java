@@ -114,31 +114,6 @@ public class signin extends Activity {
 
        Intent intent = new Intent(this,Home.class);
         startActivity(intent);
-=======
-        TextView username = (TextView) findViewById(R.id.username);
-        TextView password = (TextView) findViewById(R.id.password);
-
-
-
-        inputUsername = username.getText().toString();
-        inputPassword = password.getText().toString();
-        inputUsername = inputUsername.trim();
-
-        System.out.println(inputUsername + " = " + loginUsername);
-        System.out.println(inputPassword + " = " + LoginPassword);
-
-        if(inputUsername.equals(loginUsername) && inputPassword.equals(LoginPassword))
-        {
-            Intent intent = new Intent(this, Home.class);
-            startActivity(intent);
-        }
-        else
-        {
-            username.setText("");
-        }
->>>>>>> origin/master
-
-
 
     }
 
