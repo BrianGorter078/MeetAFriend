@@ -45,7 +45,10 @@ public class signin extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         un = (EditText) findViewById(R.id.username);
         pw = (EditText) findViewById(R.id.password);
         ok = (Button) findViewById(R.id.button);
@@ -85,7 +88,10 @@ public class signin extends Activity {
 //                }
 //            }
 //        });
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     }
 
     @Override
