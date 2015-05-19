@@ -2,15 +2,15 @@
     <string name="app_name">MeetAFriend</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings"><b>Settings</b></string>
     <string name="settings">SETTINGS</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="home">HOME</string>
     <string name="friends">FRIENDS</string>
     <string name="meetSomeone">Meet Someone</string>
-    <string name="notifications">Notifications / Sounds</string>
-    <string name="finds">Finds</string>
+    <string name="notifications"><b>Notifications / Sounds</b></string>
+    <string name="finds"><b>Finds</b></string>
     <string name="findFriends">Find only Friends</string>
     <string name="onlyPicture">Only people with a picture</string>
     <string name="showNotifications">Show Notifications</string>
@@ -25,7 +25,7 @@
     <string name="title_activity_edit_profile">EditProfile</string>
     <string name="editProfile">Edit Profile data</string>
     <string name="sameInterests">Only with same interests</string>
-    <string name="searchFor">Search for:</string>
+    <string name="searchFor"><b>Search for:</b></string>
     <string name="male">Male</string>
     <string name="female">Female</string>
 </resources>
