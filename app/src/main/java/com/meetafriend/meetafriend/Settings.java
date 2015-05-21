@@ -45,24 +45,38 @@ public class Settings extends Activity {
     }
 
     public void checkbuttons(View view) {
+        RadioButton female = (RadioButton) findViewById(R.id.radioButton2);
+        RadioButton male = (RadioButton) findViewById(R.id.radioButton);
+
+        if(female.isChecked())
+        {
+            male.setChecked(false);
+            female.setChecked(true);
+
+        }
+        else if(!female.isChecked())
+        {
+            male.setChecked(true);
+            female.setChecked(false);
+        }
+
+    }
+
+    public void checkbuttons1(View view) {
         RadioButton male = (RadioButton) findViewById(R.id.radioButton);
         RadioButton female = (RadioButton) findViewById(R.id.radioButton2);
 
-        if(male.isSelected())
+
+        if(male.isChecked())
         {
-            System.out.println("selected");
+            male.setChecked(true);
             female.setChecked(false);
+
         }
-        else if(male.isSelected() == false)
+        else if(!male.isChecked())
         {
-            System.out.println("Not selected");
-            female.setChecked(true);
-        }
-        else
-        {
-            System.out.println("Both not selected");
-            female.setChecked(false);
             male.setChecked(false);
+            female.setChecked(true);
         }
     }
 }
