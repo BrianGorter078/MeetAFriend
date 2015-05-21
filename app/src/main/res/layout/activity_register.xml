@@ -6,23 +6,13 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.meetafriend.meetafriend.Register">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Account!"
-        android:id="@+id/Register"
-        android:onClick="createAccount"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,7 +45,7 @@
             android:gravity="center_horizontal"
             android:paddingTop="1dp"
             android:paddingBottom="1dp"
-            android:layout_marginBottom="3dp"
+            android:layout_marginBottom="6dp"
             android:layout_marginTop="3dp" />
 
         <EditText
@@ -70,8 +60,8 @@
             android:gravity="center_horizontal"
             android:paddingTop="1dp"
             android:paddingBottom="1dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp" />
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -100,18 +90,19 @@
             android:gravity="center_horizontal"
             android:paddingTop="1dp"
             android:paddingBottom="1dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="6dp"
             android:layout_marginBottom="3dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="android:color/black"
+            android:textColor="@android:color/black"
             android:text="@string/searchInformation"
             android:id="@+id/searchInformation"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="25dp" />
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -142,7 +133,7 @@
                         android:text="@string/male"
                         android:id="@+id/radioButton3"
                         android:checked="false"
-                        android:layout_marginLeft="20dp" />
+                        android:layout_marginLeft="30dp" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
@@ -154,6 +145,65 @@
                 </LinearLayout>
             </RadioGroup>
         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/youWant"
+                android:id="@+id/textView4"
+                android:layout_marginLeft="20dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male"
+                android:id="@+id/radioButton5"
+                android:checked="false"
+                android:layout_marginLeft="16dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"
+                android:id="@+id/radioButton6"
+                android:checked="false"
+                android:layout_marginLeft="20dp" />
+
+        </LinearLayout>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/createAccount"
+            android:id="@+id/Register"
+            android:onClick="createAccount"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/googlePlay"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/facebookSignIn"
+            android:id="@+id/button2"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 

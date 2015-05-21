@@ -39,4 +39,7 @@
     <string name="age">Age</string>
     <string name="searchInformation">Search Information</string>
     <string name="YouAre">You are:</string>
+    <string name="youWant">You want:</string>
+    <string name="facebookSignIn">Sign in via Facebook</string>
+    <string name="createAccount">Create account</string>
 </resources>
