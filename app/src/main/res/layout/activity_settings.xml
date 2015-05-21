@@ -176,7 +176,9 @@
         android:layout_alignRight="@+id/switch1"
         android:layout_alignEnd="@+id/switch1"
         android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_alignStart="@+id/textView2"
+        android:onClick="getProgress"
+        android:max="250"/>
 
     <TextView
         android:layout_width="wrap_content"

@@ -3,6 +3,9 @@ package com.meetafriend.meetafriend;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class signin extends Activity {
+public class signin extends AppCompatActivity {
 
 //    Object[] object;
 
@@ -39,6 +42,12 @@ public class signin extends Activity {
         un = (EditText) findViewById(R.id.username);
         pw = (EditText) findViewById(R.id.password);
         ok = (Button) findViewById(R.id.loginButton);
+
+       Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
+       setSupportActionBar(toolbar);
+        toolbar.setCollapsible(true);
+
+
 //        error = (TextView) findViewById(R.id.error);
 //        ok.setOnClickListener(new View.OnClickListener() {
 //

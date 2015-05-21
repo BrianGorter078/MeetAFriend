@@ -1,14 +1,18 @@
 package com.meetafriend.meetafriend;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.Paint;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 
 public class Settings extends Activity {
@@ -18,6 +22,22 @@ public class Settings extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+
+
+        SeekBar mSeekbar = (SeekBar) findViewById(R.id.seekBar);
+        final TextView seekText = (TextView) findViewById(R.id.kilometers);
+
+        mSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+            {
+                seekText.setText(Integer.toString(progress) + " KM");
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+
+            public void onStopTrackingTouch(SeekBar seekBar) {}
+        });
 
     }
 
@@ -79,4 +99,5 @@ public class Settings extends Activity {
             female.setChecked(true);
         }
     }
+
 }
