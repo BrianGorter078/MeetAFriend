@@ -69,15 +69,15 @@
             android:layout_centerHorizontal="true"
             android:elegantTextHeight="true" />
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp" />
+    <!--<com.google.android.gms.common.SignInButton-->
+    <!--android:id="@+id/sign_in_button"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginBottom="44dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:paddingBottom="5dp" />-->
 
     <ImageView
         android:layout_width="wrap_content"
