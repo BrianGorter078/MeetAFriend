@@ -39,7 +39,7 @@ public class signin extends Activity {
         un = (EditText) findViewById(R.id.username);
         pw = (EditText) findViewById(R.id.password);
         ok = (Button) findViewById(R.id.loginButton);
-        error = (TextView) findViewById(R.id.error);
+//        error = (TextView) findViewById(R.id.error);
 //        ok.setOnClickListener(new View.OnClickListener() {
 //
 //            @Override

@@ -6,7 +6,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 
 
 public class Settings extends Activity {
@@ -40,5 +42,27 @@ public class Settings extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void checkbuttons(View view) {
+        RadioButton male = (RadioButton) findViewById(R.id.radioButton);
+        RadioButton female = (RadioButton) findViewById(R.id.radioButton2);
+
+        if(male.isSelected())
+        {
+            System.out.println("selected");
+            female.setChecked(false);
+        }
+        else if(male.isSelected() == false)
+        {
+            System.out.println("Not selected");
+            female.setChecked(true);
+        }
+        else
+        {
+            System.out.println("Both not selected");
+            female.setChecked(false);
+            male.setChecked(false);
+        }
     }
 }
