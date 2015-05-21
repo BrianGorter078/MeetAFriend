@@ -39,6 +39,8 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/password"
+            android:hint="Password"
+            android:gravity="center_horizontal"
             android:background="@drawable/customedittext"
             android:paddingTop="1dp"
             android:paddingBottom="1dp"
@@ -54,9 +56,10 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
+            android:hint="@string/username"
             android:id="@+id/username"
+            android:gravity="center_horizontal"
             android:background="@drawable/customedittext"
-            android:paddingLeft="5dp"
             android:paddingTop="1dp"
             android:paddingBottom="1dp"
             android:layout_marginBottom="3dp"
@@ -66,18 +69,15 @@
             android:layout_centerHorizontal="true"
             android:elegantTextHeight="true" />
 
-    <Button
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/googlePlay"
-        android:id="@+id/googlePlay"
-        android:background="@drawable/signinbutton"
-        android:layout_below="@+id/loginButton"
-        android:layout_marginTop="30dp"
-        android:layout_alignRight="@+id/loginButton"
-        android:layout_alignEnd="@+id/loginButton"
-        android:layout_alignLeft="@+id/registerButton"
-        android:layout_alignStart="@+id/registerButton" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
 
     <ImageView
         android:layout_width="wrap_content"

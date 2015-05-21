@@ -32,4 +32,11 @@
     <string name="kilometers">0 KM</string>
     <string name="googlePlay">Sign in via Google</string>
     <string name="meetafriend">MeetAFriend</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="personalinformation">Personal Information</string>
+    <string name="email">E-mail</string>
+    <string name="age">Age</string>
+    <string name="searchInformation">Search Information</string>
+    <string name="YouAre">You are:</string>
 </resources>
