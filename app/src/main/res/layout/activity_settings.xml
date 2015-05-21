@@ -144,7 +144,8 @@
         android:checked="false"
         android:layout_below="@+id/searchFor"
         android:layout_toRightOf="@+id/finds"
-        android:layout_toEndOf="@+id/finds" />
+        android:layout_toEndOf="@+id/finds"
+        android:onClick="checkbuttons"/>
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -154,7 +155,8 @@
         android:checked="false"
         android:layout_alignTop="@+id/radioButton"
         android:layout_toRightOf="@+id/Settings"
-        android:layout_toEndOf="@+id/Settings" />
+        android:layout_toEndOf="@+id/Settings"
+        android:onClick="checkbuttons" />
 
     <TextView
         android:layout_width="wrap_content"
