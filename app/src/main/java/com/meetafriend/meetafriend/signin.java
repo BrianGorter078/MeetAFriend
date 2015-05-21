@@ -1,17 +1,21 @@
 package com.meetafriend.meetafriend;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 
 public class signin extends AppCompatActivity {
@@ -19,7 +23,7 @@ public class signin extends AppCompatActivity {
 //    Object[] object;
 
 
-//
+    //
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -30,10 +34,13 @@ public class signin extends AppCompatActivity {
 //
 //    }
     boolean a;
-    EditText un,pw;
+    EditText un, pw;
     TextView error;
     Button ok;
-    /** Called when the activity is first created. */
+
+    /**
+     * Called when the activity is first created.
+     */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,9 +50,14 @@ public class signin extends AppCompatActivity {
         pw = (EditText) findViewById(R.id.password);
         ok = (Button) findViewById(R.id.loginButton);
 
-       Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
-       setSupportActionBar(toolbar);
-        toolbar.setCollapsible(true);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
+        setSupportActionBar(toolbar);
+
+        // create manager instance after the content view is set
+        SystemBarTintManager mTintManager = new SystemBarTintManager(this);
+        // enable status bar tint
+        mTintManager.setStatusBarTintEnabled(true);
+        mTintManager.setTintColor(getResources().getColor(R.color.colorPrimaryDark));
 
 
 //        error = (TextView) findViewById(R.id.error);
@@ -89,7 +101,9 @@ public class signin extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_home, menu);
+        getMenuInflater().inflate(R.menu.menu_signin, menu);
+
+
         return true;
     }
 
@@ -101,16 +115,23 @@ public class signin extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_search)
+        {
+
             return true;
         }
+        if (id == R.id.action_user)
+        {
+            return true;
+        }
+
 
         return super.onOptionsItemSelected(item);
     }
 
     public void login(View view) {
 
-       Intent intent = new Intent(this,Home.class);
+        Intent intent = new Intent(this, Home.class);
         startActivity(intent);
 
     }
@@ -119,8 +140,7 @@ public class signin extends AppCompatActivity {
 
     }
 
-    public boolean logins(boolean a)
-    {
+    public boolean logins(boolean a) {
 
         return a;
     }

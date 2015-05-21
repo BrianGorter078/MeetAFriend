@@ -67,4 +67,5 @@ public class Home extends Activity {
         Intent intent = new Intent(this, Found.class);
         startActivity(intent);
     }
+
 }

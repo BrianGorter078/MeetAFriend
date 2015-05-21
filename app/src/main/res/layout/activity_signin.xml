@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/testbackground"
-    tools:context=".Home">
+    tools:context="com.meetafriend.meetafriend.signin">
 
 
 
@@ -66,7 +66,8 @@
         android:textCursorDrawable="@null"
         android:layout_marginTop="323dp"
         android:layout_centerHorizontal="true"
-        android:elegantTextHeight="true" />
+        android:elegantTextHeight="true"
+        android:onClick="lol"/>
 
     <!--<com.google.android.gms.common.SignInButton-->
     <!--android:id="@+id/sign_in_button"-->
@@ -89,10 +90,7 @@
 
     <include
         android:id="@+id/tool_bar"
-        layout="@layout/toolbar"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"></include>
+        layout="@layout/toolbar"></include>
 
 
 </RelativeLayout>

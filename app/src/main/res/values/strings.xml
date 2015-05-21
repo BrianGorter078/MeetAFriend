@@ -23,7 +23,6 @@
     <string name="title_activity_found">Found</string>
     <string name="title_activity_search">Search</string>
     <string name="title_activity_edit_profile">EditProfile</string>
-<<<<<<< Updated upstream
     <string name="editProfile">Edit Profile data</string>
     <string name="sameInterests">Only with same interests</string>
     <string name="searchFor"><b>Search for:</b></string>
@@ -40,13 +39,8 @@
     <string name="age">Age</string>
     <string name="searchInformation">Search Information</string>
     <string name="YouAre">You are:</string>
-<<<<<<< Updated upstream
     <string name="youWant">You want:</string>
     <string name="facebookSignIn">Sign in via Facebook</string>
     <string name="createAccount">Create account</string>
-=======
-=======
     <string name="title_activity_google_play_services">GooglePlayServicesActivity</string>
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 </resources>
