@@ -2,10 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/testbackground"
+    android:background="@drawable/background"
     tools:context="com.meetafriend.meetafriend.signin">
-
-
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -64,33 +62,42 @@
         android:layout_marginBottom="3dp"
         android:textSize="15dp"
         android:textCursorDrawable="@null"
-        android:layout_marginTop="323dp"
+        android:layout_marginTop="308dp"
         android:layout_centerHorizontal="true"
         android:elegantTextHeight="true"
         android:onClick="lol"/>
 
-    <!--<com.google.android.gms.common.SignInButton-->
-    <!--android:id="@+id/sign_in_button"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginBottom="44dp"-->
-    <!--android:paddingTop="5dp"-->
-    <!--android:paddingBottom="5dp" />-->
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:background="@drawable/logo"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/tool_bar"
         android:layout_centerHorizontal="true" />
 
     <include
         android:id="@+id/tool_bar"
         layout="@layout/toolbar"></include>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/facebookLogin"
+        android:background="@drawable/SignInWithFacebook2"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/loginButton"
+        android:layout_alignLeft="@+id/googleLogin"
+        android:layout_alignStart="@+id/googleLogin" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/googleLogin"
+        android:background="@drawable/SignInWithGoogle"
+        android:layout_below="@+id/facebookLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
 
 
 </RelativeLayout>

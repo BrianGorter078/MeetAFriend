@@ -4,7 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings"><b>Settings</b></string>
     <string name="settings">SETTINGS</string>
-    <string name="login">Login</string>
+    <string name="login">Log in</string>
     <string name="register">Register</string>
     <string name="home">HOME</string>
     <string name="friends">FRIENDS</string>
@@ -43,4 +43,5 @@
     <string name="facebookSignIn">Sign in via Facebook</string>
     <string name="createAccount">Create account</string>
     <string name="title_activity_google_play_services">GooglePlayServicesActivity</string>
+    <string name="usernameColon">Username:</string>
 </resources>
