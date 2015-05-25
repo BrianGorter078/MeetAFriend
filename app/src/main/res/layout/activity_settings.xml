@@ -1,19 +1,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     tools:context="com.meetafriend.meetafriend.Settings">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/action_settings"
-        android:id="@+id/Settings"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar"></include>
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,7 +13,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/notifications"
         android:id="@+id/notifications"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="75dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -34,7 +26,9 @@
         android:paddingTop="3dp"
         android:layout_below="@+id/notifications"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp" />
 
     <Switch
         android:layout_width="wrap_content"
@@ -43,7 +37,8 @@
         android:checked="false"
         android:layout_alignBottom="@+id/showNotifications"
         android:layout_alignLeft="@+id/onlyFriendsSwitch"
-        android:layout_alignStart="@+id/onlyFriendsSwitch" />
+        android:layout_alignStart="@+id/onlyFriendsSwitch"
+        android:layout_marginRight="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,8 +59,11 @@
         android:id="@+id/findFriends"
         android:paddingTop="3dp"
         android:layout_below="@+id/finds"
-        android:layout_alignRight="@+id/showNotifications"
-        android:layout_alignEnd="@+id/showNotifications" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,7 +74,8 @@
         android:paddingTop="3dp"
         android:layout_below="@+id/findFriends"
         android:layout_alignLeft="@+id/findFriends"
-        android:layout_alignStart="@+id/findFriends" />
+        android:layout_alignStart="@+id/findFriends"
+        android:layout_marginBottom="5dp" />
 
     <Switch
         android:layout_width="wrap_content"
@@ -86,7 +85,8 @@
         android:layout_alignTop="@+id/onlyPicture"
         android:layout_alignLeft="@+id/switch1"
         android:layout_alignStart="@+id/switch1"
-        android:paddingBottom="2dp" />
+        android:paddingBottom="2dp"
+        android:layout_marginRight="10dp" />
 
     <Switch
         android:layout_width="wrap_content"
@@ -95,7 +95,8 @@
         android:checked="false"
         android:layout_alignBottom="@+id/findFriends"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -123,7 +124,8 @@
         android:checked="false"
         android:layout_alignTop="@+id/textView2"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -153,10 +155,10 @@
         android:text="@string/female"
         android:id="@+id/radioButton2"
         android:checked="false"
+        android:onClick="checkbuttons"
         android:layout_alignTop="@+id/radioButton"
-        android:layout_toRightOf="@+id/Settings"
-        android:layout_toEndOf="@+id/Settings"
-        android:onClick="checkbuttons" />
+        android:layout_toRightOf="@+id/notifications"
+        android:layout_toEndOf="@+id/notifications" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -178,7 +180,7 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
         android:onClick="getProgress"
-        android:max="250"/>
+        android:max="250" />
 
     <TextView
         android:layout_width="wrap_content"

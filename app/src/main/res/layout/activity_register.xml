@@ -1,26 +1,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="fill_parent"
     tools:context="com.meetafriend.meetafriend.Register">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar"></include>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/register"
-            android:id="@+id/register"
-            android:layout_gravity="center_horizontal" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +23,7 @@
             android:text="@string/personalinformation"
             android:id="@+id/personalInfo"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="3dp" />
 
         <EditText
@@ -179,7 +172,6 @@
         </LinearLayout>
 
         <Button
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/createAccount"
@@ -190,20 +182,21 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp" />
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/googlePlay"
+            android:background="@drawable/SignInWithFacebook2"
             android:id="@+id/button"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="35dp" />
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/facebookSignIn"
+            android:background="@drawable/SignInWithGoogle"
             android:id="@+id/button2"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp" />
 
     </LinearLayout>
 

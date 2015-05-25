@@ -8,7 +8,7 @@
     <string name="register">Register</string>
     <string name="home">HOME</string>
     <string name="friends">FRIENDS</string>
-    <string name="meetSomeone">Meet Someone</string>
+    <string name="meetSomeone">Meet someone random</string>
     <string name="notifications"><b>Notifications / Sounds</b></string>
     <string name="finds"><b>Finds</b></string>
     <string name="findFriends">Find only Friends</string>
@@ -24,14 +24,14 @@
     <string name="title_activity_search">Search</string>
     <string name="title_activity_edit_profile">EditProfile</string>
     <string name="editProfile">Edit Profile data</string>
-    <string name="sameInterests">Only with same interests</string>
+    <string name="sameInterests">Only people with same interests</string>
     <string name="searchFor"><b>Search for:</b></string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="searchRadius"><b>Search Radius</b></string>
     <string name="kilometers">0 KM</string>
     <string name="googlePlay">Sign in via Google</string>
-    <string name="meetafriend">MeetAFriend</string>
+    <string name="meetafriend">Meet A Friend!</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="personalinformation">Personal Information</string>
@@ -43,5 +43,10 @@
     <string name="facebookSignIn">Sign in via Facebook</string>
     <string name="createAccount">Create account</string>
     <string name="title_activity_google_play_services">GooglePlayServicesActivity</string>
-    <string name="usernameColon">Username:</string>
+    <string name="changingUsernameHome">Username: Dummy Text</string>
+    <string name="changingAgeHome">Age: Dummy Text</string>
+    <string name="changingLocationHome">Location: Dummy Text</string>
+    <string name="recommended">Recommended people</string>
+    <string name="customizeFinds">Customize your finds</string>
+    <string name="changeInSettings">Once you press this button, you will be able to change your find settings on the settings page</string>
 </resources>
