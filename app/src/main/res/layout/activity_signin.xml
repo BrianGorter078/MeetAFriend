@@ -2,69 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background2"
     tools:context="com.meetafriend.meetafriend.Signin">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:id="@+id/loginButton"
-        android:onClick="login"
-        android:background="@drawable/signinbutton"
-        android:layout_below="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:layout_alignEnd="@+id/password" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:textColor="@android:color/black"
-        android:id="@+id/registerButton"
-        android:onClick="register"
-        android:background="@drawable/signinbutton"
-        android:layout_alignTop="@+id/loginButton"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/password"
-        android:hint="Password"
-        android:gravity="center_horizontal"
-        android:background="@drawable/customedittext"
-        android:paddingTop="1dp"
-        android:paddingBottom="1dp"
-        android:layout_marginBottom="3dp"
-        android:textSize="15dp"
-        android:textCursorDrawable="@null"
-        android:layout_below="@+id/username"
-        android:layout_alignLeft="@+id/username"
-        android:layout_alignStart="@+id/username" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:hint="@string/username"
-        android:id="@+id/username"
-        android:gravity="center_horizontal"
-        android:background="@drawable/customedittext"
-        android:paddingTop="1dp"
-        android:paddingBottom="1dp"
-        android:layout_marginBottom="3dp"
-        android:textSize="15dp"
-        android:textCursorDrawable="@null"
-        android:layout_marginTop="308dp"
-        android:layout_centerHorizontal="true"
-        android:elegantTextHeight="true"/>
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar"></include>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -75,28 +18,108 @@
         android:layout_below="@+id/tool_bar"
         android:layout_centerHorizontal="true" />
 
-    <include
-        android:id="@+id/tool_bar"
-        layout="@layout/toolbar"></include>
-
-    <ImageButton
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/facebookLogin"
-        android:background="@drawable/sign_in_facebook"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/loginButton"
-        android:layout_alignLeft="@+id/googleLogin"
-        android:layout_alignStart="@+id/googleLogin" />
+        android:layout_alignParentBottom="true"
+        android:clickable="false"
+        android:backgroundTintMode="add"
+        android:background="#70FFFFFF">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/googleLogin"
-        android:background="@drawable/sign_in_google"
-        android:layout_below="@+id/facebookLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_margin="40dp">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:id="@+id/loginButton"
+                android:onClick="login"
+                android:background="@drawable/signinbutton"
+                android:layout_below="@+id/password"
+                android:layout_alignRight="@+id/password"
+                android:layout_alignEnd="@+id/password"
+                android:layout_gravity="center_horizontal" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/password"
+                android:hint="Password"
+                android:gravity="center_horizontal"
+                android:background="@drawable/customedittext"
+                android:layout_marginBottom="20dp"
+                android:textSize="15dp"
+                android:textCursorDrawable="@null"
+                android:layout_below="@+id/username"
+                android:layout_alignLeft="@+id/username"
+                android:layout_alignStart="@+id/username"
+                android:layout_gravity="center_horizontal" />
+
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:textColor="@android:color/black"
+                android:id="@+id/registerButton"
+                android:onClick="register"
+                android:background="@drawable/signinbutton"
+                android:layout_alignTop="@+id/loginButton"
+                android:layout_alignLeft="@+id/password"
+                android:layout_alignStart="@+id/password"
+                android:layout_gravity="right|center_vertical"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/facebookLogin"
+                android:background="@drawable/sign_in_facebook"
+                android:layout_marginTop="45dp"
+                android:layout_below="@+id/loginButton"
+                android:layout_alignLeft="@+id/googleLogin"
+                android:layout_alignStart="@+id/googleLogin"
+                android:layout_gravity="left|center_vertical"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/googleLogin"
+                android:background="@drawable/sign_in_google"
+                android:layout_below="@+id/facebookLogin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="left|bottom"
+                android:visibility="gone" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="@string/username"
+                android:id="@+id/username"
+                android:gravity="center_horizontal"
+                android:background="@drawable/customedittext"
+                android:layout_marginBottom="20dp"
+                android:textSize="15dp"
+                android:textCursorDrawable="@null"
+                android:layout_centerHorizontal="true"
+                android:elegantTextHeight="true"
+                android:layout_gravity="center_horizontal" />
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
