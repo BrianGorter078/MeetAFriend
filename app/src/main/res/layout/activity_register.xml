@@ -124,7 +124,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/male"
-                        android:id="@+id/radioButton3"
+                        android:id="@+id/youAreRadiobuttonMale"
+                        android:onClick="checkbuttonsMale"
                         android:checked="false"
                         android:layout_marginLeft="30dp" />
 
@@ -132,7 +133,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/female"
-                        android:id="@+id/radioButton4"
+                        android:onClick="checkbuttonsFemale"
+                        android:id="@+id/youAreRadiobuttonFemale"
                         android:checked="false"
                         android:layout_marginLeft="20dp" />
                 </LinearLayout>
@@ -157,7 +159,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/male"
-                android:id="@+id/radioButton5"
+                android:id="@+id/youWantRadiobuttonMale"
+                android:onClick="checkbuttonsMale"
                 android:checked="false"
                 android:layout_marginLeft="16dp" />
 
@@ -165,7 +168,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/female"
-                android:id="@+id/radioButton6"
+                android:id="@+id/youWantRadiobuttonFemale"
+                android:onClick="checkbuttonsFemale"
                 android:checked="false"
                 android:layout_marginLeft="20dp" />
 
@@ -175,7 +179,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/createAccount"
-            android:id="@+id/Register"
+            android:id="@+id/makeAccountButton"
             android:onClick="createAccount"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -185,18 +189,10 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/sign_in_facebook"
-            android:id="@+id/button"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="35dp" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:background="@drawable/sign_in_google"
-            android:id="@+id/button2"
+            android:id="@+id/googleLoginButton"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="50dp" />
 
     </LinearLayout>
 
