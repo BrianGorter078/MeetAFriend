@@ -59,8 +59,8 @@ public class signin extends AppCompatActivity {
         pw = (EditText) findViewById(R.id.password);
         ok = (Button) findViewById(R.id.loginButton);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
+//        setSupportActionBar(toolbar);
 
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
