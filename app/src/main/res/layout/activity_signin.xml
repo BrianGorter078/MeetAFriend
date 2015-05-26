@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/facebookLogin"
-        android:background="@drawable/SignInWithFacebook2"
+        android:background="@drawable/signinwithfacebook2"
         android:layout_marginTop="45dp"
         android:layout_below="@+id/loginButton"
         android:layout_alignLeft="@+id/googleLogin"
@@ -94,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/googleLogin"
-        android:background="@drawable/SignInWithGoogle"
+        android:background="@drawable/signinwithgoogle"
         android:layout_below="@+id/facebookLogin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />

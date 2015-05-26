@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.parse.FindCallback;
+import com.parse.Parse;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
+
+import java.text.ParseException;
+import java.util.List;
 
 
 public class signin extends AppCompatActivity {
@@ -53,11 +62,13 @@ public class signin extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
 
-        // create manager instance after the content view is set
-        SystemBarTintManager mTintManager = new SystemBarTintManager(this);
-        // enable status bar tint
-        mTintManager.setStatusBarTintEnabled(true);
-        mTintManager.setTintColor(getResources().getColor(R.color.colorPrimaryDark));
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "AtJHSuDCGrtUquV7JKUI6cyn32sj313AbBXBH6UY", "reP6s8xtAOVXYBow3d0QZ6g7Qr1HD9yhEv07uavR");
+
+
+
+
 
 
 //        error = (TextView) findViewById(R.id.error);
@@ -138,7 +149,36 @@ public class signin extends AppCompatActivity {
 
     public void register(View view) {
 
-    }
+
+
+        TextView us = (TextView) findViewById(R.id.username);
+        TextView ps = (TextView) findViewById(R.id.password);
+
+        String us1 =  us.getText().toString();
+        String ps1 =  ps.getText().toString();
+
+        ParseUser user = new ParseUser();
+        user.setUsername(us1);
+        user.setPassword(ps1);
+        user.setEmail("email@example.com");
+
+        user.put("phone", "650-555-0000");
+
+        user.signUpInBackground(new SignUpCallback() {
+
+            @Override
+            public void done(com.parse.ParseException e) {
+                if (e == null) {
+                    System.out.println("Geslaagd");
+                } else {
+                    System.out.println("Mislukt");
+                }
+            }
+        });
+
+        }
+
+
 
     public boolean logins(boolean a) {
 

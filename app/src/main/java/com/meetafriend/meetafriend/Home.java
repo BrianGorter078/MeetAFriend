@@ -20,8 +20,6 @@ public class Home extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button button = (Button) findViewById(R.id.Home);
-        button.setPaintFlags(button.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
     }
 
@@ -50,11 +48,6 @@ public class Home extends Activity {
 
     public void friends(View view) {
         Intent intent = new Intent(this, Friends.class);
-        startActivity(intent);
-    }
-
-    public void home(View view) {
-        Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
 
