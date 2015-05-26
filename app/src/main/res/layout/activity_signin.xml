@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background"
-    tools:context="com.meetafriend.meetafriend.signin">
+    tools:context="com.meetafriend.meetafriend.Signin">
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -64,8 +64,7 @@
         android:textCursorDrawable="@null"
         android:layout_marginTop="308dp"
         android:layout_centerHorizontal="true"
-        android:elegantTextHeight="true"
-        android:onClick="lol"/>
+        android:elegantTextHeight="true"/>
 
     <ImageView
         android:layout_width="wrap_content"

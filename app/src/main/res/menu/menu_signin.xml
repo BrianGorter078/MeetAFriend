@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.meetafriend.meetafriend.signin">
+    tools:context="com.meetafriend.meetafriend.Signin">
 
     <item
         android:id="@+id/action_settings"
