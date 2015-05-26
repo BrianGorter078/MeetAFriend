@@ -8,7 +8,7 @@
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_action1"
+        android:src="@drawable/ic_action_friends"
         android:background="@drawable/cogicon"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

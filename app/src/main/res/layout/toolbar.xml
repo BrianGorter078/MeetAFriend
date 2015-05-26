@@ -10,8 +10,36 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/cogicon"
-        android:id="@+id/toolbarTextView"/>
+        android:layout_gravity="right"
+        android:background="@drawable/ic_action_settings"
+        android:onClick="settings"
+        android:id="@+id/toolbarSettings" />
+
+    <ImageButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="@drawable/ic_action_friends"
+        android:onClick="friends"
+        android:layout_gravity="right"
+        android:id="@+id/toolbarFriends" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_action_back"
+        android:onClick="back"
+        android:layout_gravity="left"
+        android:id="@+id/toolbarBack"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/app_name"
+        android:onClick="home"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:id="@+id/toolbarTextview"/>
 
  </android.support.v7.widget.Toolbar>
 

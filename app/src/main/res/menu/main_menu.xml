@@ -19,7 +19,7 @@
         android:id="@+id/action_user"
         android:orderInCategory="300"
         android:title="User"
-        android:icon="@drawable/ic_action1"
+        android:icon="@drawable/ic_action_friends"
         app:showAsAction="ifRoom"></item>
 
 </menu>

@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Signin extends Activity implements OnClickListener {
@@ -40,6 +41,14 @@ public class Signin extends Activity implements OnClickListener {
         pass = (EditText) findViewById(R.id.password);
         bLogin = (Button) findViewById(R.id.loginButton);
         bLogin.setOnClickListener(this);
+
+        ImageButton toolbarBack = (ImageButton) findViewById(R.id.toolbarBack);
+        toolbarBack.setVisibility(View.INVISIBLE);
+    }
+
+    public void register(View view) {
+        Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
     }
 
     @Override
