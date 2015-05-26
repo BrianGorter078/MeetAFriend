@@ -15,8 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.readystatesoftware.systembartint.SystemBarTintManager;
-
 
 public class signin extends AppCompatActivity {
 
@@ -52,12 +50,6 @@ public class signin extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
-
-        // create manager instance after the content view is set
-        SystemBarTintManager mTintManager = new SystemBarTintManager(this);
-        // enable status bar tint
-        mTintManager.setStatusBarTintEnabled(true);
-        mTintManager.setTintColor(getResources().getColor(R.color.colorPrimaryDark));
 
 
 //        error = (TextView) findViewById(R.id.error);
@@ -124,7 +116,6 @@ public class signin extends AppCompatActivity {
         {
             return true;
         }
-
 
         return super.onOptionsItemSelected(item);
     }

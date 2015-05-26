@@ -5,6 +5,12 @@
     tools:context="com.meetafriend.meetafriend.signin">
 
     <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        android:icon="@drawable/cogicon"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/action_search"
         android:orderInCategory="200"
         android:title="Search"
@@ -18,5 +24,4 @@
         android:icon="@drawable/ic_action1"
         app:showAsAction="ifRoom"
         />
-
 </menu>
