@@ -179,7 +179,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/createAccount"
-            android:id="@+id/makeAccountButton"
+                android:id="@+id/makeAccountButton"
             android:onClick="createAccount"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"

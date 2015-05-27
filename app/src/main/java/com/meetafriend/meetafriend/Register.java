@@ -35,7 +35,7 @@ public class Register extends Activity implements OnClickListener {
     private ProgressDialog pDialog;
     // JSON parser class
     JSONParser jsonParser = new JSONParser();
-    private static final String LOGIN_URL = "http://boermedia.com/maf/register.php";
+    private static final String REGISTER_URL = "http://boermedia.com/maf/register.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
 
@@ -68,11 +68,11 @@ public class Register extends Activity implements OnClickListener {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(Register.this);
-            pDialog.setMessage("Attempting to register...");
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(true);
-            pDialog.show();
+//            pDialog = new ProgressDialog(Register.this);
+//            pDialog.setMessage("Attempting for login...");
+//            pDialog.setIndeterminate(false);
+//            pDialog.setCancelable(true);
+//            pDialog.show();
         }
 
         @Override
@@ -81,17 +81,18 @@ public class Register extends Activity implements OnClickListener {
             int success;
             String username = user.getText().toString();
             String password = pass.getText().toString();
-            if(user.length()!=0 && pass.length()!=0){
+            if(user.length()!=0 && pass.length()!=0)
+            {
                 try {
                     List<NameValuePair> params = new ArrayList<NameValuePair>();
                     params.add(new BasicNameValuePair("username", username));
                     params.add(new BasicNameValuePair("password", password));
                     //Log.d("request!", "starting");
-                    JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "GET", params); // checking log for json response
+                    JSONObject json = jsonParser.makeHttpRequest(REGISTER_URL, "POST", params); // checking log for json response
                     //Log.d("Login attempt", json.toString()); // success tag for json
                     success = json.getInt(TAG_SUCCESS);
                     if (success == 1) {
-                        //Log.d("Successfully Registered!", json.toString());
+                        Log.d("Successfully Login!", json.toString());
                         Intent ii = new Intent(Register.this, Home.class);
                         finish(); // this finish() method is used to tell android os that we are done with current //activity now! Moving to other activity
                         startActivity(ii);
@@ -110,7 +111,7 @@ public class Register extends Activity implements OnClickListener {
          * Once the background process is done we need to Dismiss the progress dialog asap * *
          */
         protected void onPostExecute(String message) {
-            pDialog.dismiss();
+            //pDialog.dismiss();
             if (message != null) {
                 Toast.makeText(Register.this, message, Toast.LENGTH_LONG).show();
             }
@@ -134,10 +135,10 @@ public class Register extends Activity implements OnClickListener {
         startActivity(intent);
     }
 
-    public void createAccount(View view) {
-        Intent intent = new Intent(this, Interests.class);
-        startActivity(intent);
-    }
+//    public void createAccount(View view) {
+//        Intent intent = new Intent(this, Interests.class);
+//        startActivity(intent);
+//    }
 
     public void checkbuttonsFemale(View view) {
         RadioButton female = (RadioButton) findViewById(R.id.youAreRadiobuttonFemale);
