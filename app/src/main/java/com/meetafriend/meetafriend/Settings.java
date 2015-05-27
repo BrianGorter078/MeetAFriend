@@ -45,17 +45,17 @@ public class Settings extends Activity {
         startActivity(intent);
     }
 
-    public void back(View view2) {
+    public void back(View view) {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
 
-    public void toEditProfile(View view3) {
+    public void toEditProfile(View view) {
         Intent intent = new Intent(this, EditProfile.class);
         startActivity(intent);
     }
 
-    public void checkbuttonsFemale(View view4) {
+    public void checkbuttonsFemale(View view) {
         RadioButton female = (RadioButton) findViewById(R.id.searchForFemale);
         RadioButton male = (RadioButton) findViewById(R.id.searchForMale);
 
@@ -73,7 +73,7 @@ public class Settings extends Activity {
 
     }
 
-    public void checkbuttonsMale(View view5) {
+    public void checkbuttonsMale(View view) {
         RadioButton male = (RadioButton) findViewById(R.id.searchForMale);
         RadioButton female = (RadioButton) findViewById(R.id.searchForFemale);
 

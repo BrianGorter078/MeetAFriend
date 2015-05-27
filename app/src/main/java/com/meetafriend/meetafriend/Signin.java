@@ -44,10 +44,6 @@ public class Signin extends Activity implements OnClickListener {
 
         ImageButton toolbarBack = (ImageButton) findViewById(R.id.toolbarBack);
         toolbarBack.setVisibility(View.INVISIBLE);
-        ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
-        toolbarFriends.setVisibility(View.INVISIBLE);
-        ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
-        toolbarSettings.setVisibility(View.INVISIBLE);
     }
 
     public void register(View view) {
