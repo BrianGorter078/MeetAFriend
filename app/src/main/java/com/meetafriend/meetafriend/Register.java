@@ -1,28 +1,18 @@
 package com.meetafriend.meetafriend;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,19 +28,23 @@ public class Register extends Activity implements OnClickListener {
     private static final String REGISTER_URL = "http://boermedia.com/maf/register.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
+=======
+public class Register extends Activity {
+>>>>>>> origin/master
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        user = (EditText) findViewById(R.id.usernameRegister);
-        pass = (EditText) findViewById(R.id.passwordRegister);
-        bLogin = (Button) findViewById(R.id.makeAccountButton);
-        bLogin.setOnClickListener(this);
 
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Register");
+        ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
+        toolbarFriends.setVisibility(View.INVISIBLE);
+        ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
+        toolbarSettings.setVisibility(View.INVISIBLE);
     }
+<<<<<<< HEAD
     public void onClick(View v) { // TODO Auto-generated method stub
         switch (v.getId()) {
             case R.id.makeAccountButton:
@@ -119,6 +113,8 @@ public class Register extends Activity implements OnClickListener {
     }
 
 
+=======
+>>>>>>> origin/master
 
     public void friends(View view) {
         Intent intent = new Intent(this, Friends.class);
@@ -143,6 +139,8 @@ public class Register extends Activity implements OnClickListener {
     public void checkbuttonsFemale(View view) {
         RadioButton female = (RadioButton) findViewById(R.id.youAreRadiobuttonFemale);
         RadioButton male = (RadioButton) findViewById(R.id.youAreRadiobuttonMale);
+        RadioButton male2 = (RadioButton) findViewById(R.id.youWantRadiobuttonMale);
+        RadioButton female2 = (RadioButton) findViewById(R.id.youWantRadiobuttonFemale);
 
         if(female.isChecked()) {
             male.setChecked(false);
@@ -152,11 +150,22 @@ public class Register extends Activity implements OnClickListener {
             male.setChecked(true);
             female.setChecked(false);
         }
+
+        if(female2.isChecked()) {
+            male2.setChecked(false);
+            female2.setChecked(true);
+        }
+        else if(!female2.isChecked()) {
+            male2.setChecked(true);
+            female2.setChecked(false);
+        }
     }
 
     public void checkbuttonsMale(View view) {
         RadioButton male = (RadioButton) findViewById(R.id.youAreRadiobuttonMale);
         RadioButton female = (RadioButton) findViewById(R.id.youAreRadiobuttonFemale);
+        RadioButton male2 = (RadioButton) findViewById(R.id.youWantRadiobuttonMale);
+        RadioButton female2 = (RadioButton) findViewById(R.id.youWantRadiobuttonFemale);
 
         if(male.isChecked()) {
             male.setChecked(true);
@@ -165,6 +174,15 @@ public class Register extends Activity implements OnClickListener {
         else if(!male.isChecked()) {
             male.setChecked(false);
             female.setChecked(true);
+        }
+
+        if(male2.isChecked()) {
+            male2.setChecked(true);
+            female2.setChecked(false);
+        }
+        else if(!male2.isChecked()) {
+            male2.setChecked(false);
+            female2.setChecked(true);
         }
     }
 }
