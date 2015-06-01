@@ -1,23 +1,32 @@
 package com.meetafriend.meetafriend;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Register extends Activity implements OnClickListener {
+public class Register extends Activity implements View.OnClickListener {
 
     private EditText user, pass;
     private Button bLogin;
@@ -28,9 +37,7 @@ public class Register extends Activity implements OnClickListener {
     private static final String REGISTER_URL = "http://boermedia.com/maf/register.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
-=======
-public class Register extends Activity {
->>>>>>> origin/master
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +51,6 @@ public class Register extends Activity {
         ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
         toolbarSettings.setVisibility(View.INVISIBLE);
     }
-<<<<<<< HEAD
     public void onClick(View v) { // TODO Auto-generated method stub
         switch (v.getId()) {
             case R.id.makeAccountButton:
@@ -112,9 +118,6 @@ public class Register extends Activity {
         }
     }
 
-
-=======
->>>>>>> origin/master
 
     public void friends(View view) {
         Intent intent = new Intent(this, Friends.class);

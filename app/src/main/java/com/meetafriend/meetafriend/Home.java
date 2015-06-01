@@ -73,9 +73,11 @@ public class Home extends Activity implements LocationListener{
     @Override
     protected void onResume() {
         super.onResume();
-        locationManager.requestLocationUpdates(provider, 0, 0, this);
-    }
+        if (locationManager.getAllProviders() != null) {
 
+        locationManager.requestLocationUpdates(provider, 0, 0, this);
+        }
+    }
     /* Remove the locationlistener updates when Activity is paused */
     @Override
     protected void onPause() {
