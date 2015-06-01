@@ -22,7 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Home extends Activity implements LocationListener{
+public class Home extends Activity implements LocationListener {
 
     Button mButton;
     EditText uEdit;
@@ -35,6 +35,7 @@ public class Home extends Activity implements LocationListener{
     private String provider;
     TextView LongitudeEdit;
     TextView LatitudeEdit;
+    Location location;
 
 
     @Override
@@ -43,13 +44,42 @@ public class Home extends Activity implements LocationListener{
         setContentView(R.layout.activity_home);
 
 
-
-
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Home");
         ImageButton toolbarBack = (ImageButton) findViewById(R.id.toolbarBack);
         toolbarBack.setVisibility(View.INVISIBLE);
 
+
+
+        LongitudeEdit = (TextView) findViewById(R.id.textView14);
+        LatitudeEdit = (TextView) findViewById(R.id.textView15);
+
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        provider = LocationManager.GPS_PROVIDER;
+        System.out.println(provider);
+        location = locationManager.requestSingleUpdate(provider);
+        location = locationManager.getLastKnownLocation(provider);
+        System.out.println(location);
+
+
+
+
+        if (location != null) {
+            System.out.println("Provider " + provider + " has been selected.");
+            latitude = location.getLatitude();
+            longitude = location.getLongitude();
+
+            String latitude2 = String.valueOf(latitude);
+            String longitude2 = String.valueOf(longitude);
+
+            LongitudeEdit.setText("Huidige Lengtegraad: " + longitude2);
+            LatitudeEdit.setText("Huidige Breedtegraad: " + latitude2);
+            onLocationChanged(location);
+        } else {
+            LongitudeEdit.setText("Geen locatie gevonden");
+        }
 
 
     }
@@ -75,9 +105,10 @@ public class Home extends Activity implements LocationListener{
         super.onResume();
         if (locationManager.getAllProviders() != null) {
 
-        locationManager.requestLocationUpdates(provider, 0, 0, this);
+            locationManager.requestLocationUpdates(provider, 0, 0, this);
         }
     }
+
     /* Remove the locationlistener updates when Activity is paused */
     @Override
     protected void onPause() {
@@ -92,14 +123,12 @@ public class Home extends Activity implements LocationListener{
 
     @Override
     public void onProviderEnabled(String provider) {
-        Toast.makeText(this, "Enabled provider " + provider,
-                Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public void onProviderDisabled(String provider) {
-        Toast.makeText(this, "Disabled provider " + provider,
-                Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -131,38 +160,30 @@ public class Home extends Activity implements LocationListener{
 //        Intent intent = new Intent(this, Search.class);
 //        startActivity(intent);
 
-        LongitudeEdit = (TextView) findViewById(R.id.textView14);
-        LatitudeEdit = (TextView) findViewById(R.id.textView15);
+//        LongitudeEdit = (TextView) findViewById(R.id.textView14);
+//        LatitudeEdit = (TextView) findViewById(R.id.textView15);
+//
+//        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        Criteria criteria = new Criteria();
+//
+//        provider = locationManager.getBestProvider(criteria, true);
+//        System.out.println(provider);
+//        Location location = locationManager.getLastKnownLocation(provider);
+//        System.out.println(location);
+//
+//        if (location != null) {
+//            System.out.println("Provider " + provider + " has been selected.");
+//            onLocationChanged(location);
+//        } else {
+//            LongitudeEdit.setText("Geen locatie gevonden");
+//        }
+        provider = LocationManager.GPS_PROVIDER;
+        location = locationManager.getLastKnownLocation(provider);
 
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Criteria criteria = new Criteria();
 
-        provider = locationManager.getBestProvider(criteria, true);
-        System.out.println(provider);
-        Location location = locationManager.getLastKnownLocation(provider);
-        System.out.println(location);
-
-        if (location != null) {
-            System.out.println("Provider " + provider + " has been selected.");
-            onLocationChanged(location);
-        } else {
-            LongitudeEdit.setText("Geen locatie gevonden");
-        }
-
-
-        latitude = (double) location.getLatitude();
-        longitude = (double) location.getLongitude();
-
-        String latitude2 = String.valueOf(latitude);
-        String longitude2 = String.valueOf(longitude);
-
-        LongitudeEdit.setText("Huidige Lengtegraad: " + longitude2);
-        LatitudeEdit.setText("Huidige Breedtegraad: " + latitude2);
     }
 
 }
-
-
 
 
 
