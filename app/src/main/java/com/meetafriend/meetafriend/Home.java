@@ -42,6 +42,16 @@ public class Home extends Activity implements LocationListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
+
+
+        TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
+        toolbarTextview.setText("Home");
+        ImageButton toolbarBack = (ImageButton) findViewById(R.id.toolbarBack);
+        toolbarBack.setVisibility(View.INVISIBLE);
+
+
+
     }
 
     @Override
@@ -124,6 +134,7 @@ public class Home extends Activity implements LocationListener{
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
+
         provider = locationManager.getBestProvider(criteria, true);
         System.out.println(provider);
         Location location = locationManager.getLastKnownLocation(provider);
@@ -135,12 +146,6 @@ public class Home extends Activity implements LocationListener{
         } else {
             LongitudeEdit.setText("Geen locatie gevonden");
         }
-
-
-        TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
-        toolbarTextview.setText("Home");
-        ImageButton toolbarBack = (ImageButton) findViewById(R.id.toolbarBack);
-        toolbarBack.setVisibility(View.INVISIBLE);
 
 
         latitude = (double) location.getLatitude();
