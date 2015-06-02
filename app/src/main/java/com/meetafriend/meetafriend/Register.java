@@ -28,7 +28,7 @@ import java.util.List;
 
 public class Register extends Activity implements View.OnClickListener {
 
-    private EditText user, pass;
+    private EditText user, pass, email, age;
     private Button bLogin;
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -43,21 +43,23 @@ public class Register extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        user = (EditText) findViewById(R.id.usernameRegister);
+        pass = (EditText) findViewById(R.id.passwordRegister);
+        email = (EditText) findViewById(R.id.emailRegister);
+        age = (EditText) findViewById(R.id.ageRegister);
+        //gender = (EditText) findViewById(R.id.passwordRegister);
+        bLogin = (Button) findViewById(R.id.makeAccountButton);
+        bLogin.setOnClickListener(this);
 
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Register");
-        ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
-        toolbarFriends.setVisibility(View.INVISIBLE);
-        ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
-        toolbarSettings.setVisibility(View.INVISIBLE);
+//        ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
+//        toolbarFriends.setVisibility(View.INVISIBLE);
+//        ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
+//        toolbarSettings.setVisibility(View.INVISIBLE);
     }
     public void onClick(View v) { // TODO Auto-generated method stub
-        switch (v.getId()) {
-            case R.id.makeAccountButton:
-                new AttemptRegister().execute(); // here we have used, switch case, because on login activity you may //also want to show registration button, so if the user is new ! we can go the //registration activity , other than this we could also do this without switch //case.
-            default:
-                break;
-        }
+        new AttemptRegister().execute(); // here we have used, switch case, because on login activity you may //also want to show registration button, so if the user is new ! we can go the //registration activity , other than this we could also do this without switch //case.
     }
     class AttemptRegister extends AsyncTask<String, String, String> {
         /**
@@ -68,25 +70,30 @@ public class Register extends Activity implements View.OnClickListener {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-//            pDialog = new ProgressDialog(Register.this);
-//            pDialog.setMessage("Attempting for login...");
-//            pDialog.setIndeterminate(false);
-//            pDialog.setCancelable(true);
-//            pDialog.show();
+            pDialog = new ProgressDialog(Register.this);
+            pDialog.setMessage("Attempting to register...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
         }
 
         @Override
         protected String doInBackground(String... args) {
             // here Check for success tag
             int success;
-            String username = user.getText().toString();
-            String password = pass.getText().toString();
-            if(user.length()!=0 && pass.length()!=0)
-            {
+            String register_username = user.getText().toString();
+            String register_password = pass.getText().toString();
+            String register_emailaddress = email.getText().toString();
+            String register_age = age.getText().toString();
+
+            if(user.length()!= 0 && pass.length()!= 0){
                 try {
                     List<NameValuePair> params = new ArrayList<NameValuePair>();
-                    params.add(new BasicNameValuePair("username", username));
-                    params.add(new BasicNameValuePair("password", password));
+                    params.add(new BasicNameValuePair("username", register_username));
+                    params.add(new BasicNameValuePair("password", register_password));
+                    params.add(new BasicNameValuePair("email", register_emailaddress));
+                    params.add(new BasicNameValuePair("age", register_age));
+                    //params.add(new BasicNameValuePair("gender", gender));
                     //Log.d("request!", "starting");
                     JSONObject json = jsonParser.makeHttpRequest(REGISTER_URL, "POST", params); // checking log for json response
                     //Log.d("Login attempt", json.toString()); // success tag for json
@@ -111,7 +118,7 @@ public class Register extends Activity implements View.OnClickListener {
          * Once the background process is done we need to Dismiss the progress dialog asap * *
          */
         protected void onPostExecute(String message) {
-            //pDialog.dismiss();
+            pDialog.dismiss();
             if (message != null) {
                 Toast.makeText(Register.this, message, Toast.LENGTH_LONG).show();
             }
@@ -133,11 +140,6 @@ public class Register extends Activity implements View.OnClickListener {
         Intent intent = new Intent(this, Signin.class);
         startActivity(intent);
     }
-
-//    public void createAccount(View view) {
-//        Intent intent = new Intent(this, Interests.class);
-//        startActivity(intent);
-//    }
 
     public void checkbuttonsFemale(View view) {
         RadioButton female = (RadioButton) findViewById(R.id.youAreRadiobuttonFemale);

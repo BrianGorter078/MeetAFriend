@@ -33,17 +33,19 @@
             android:layout_marginBottom="80dp"
             android:layout_marginTop="20dp">
 
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/login"
-                android:id="@+id/loginButton"
-                android:onClick="login"
-                android:background="@drawable/signinbutton"
-                android:layout_below="@+id/password"
-                android:layout_alignRight="@+id/password"
-                android:layout_alignEnd="@+id/password"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="@string/username"
+                android:id="@+id/username"
+                android:background="@drawable/customedittext"
+                android:layout_marginBottom="20dp"
+                android:textSize="15dp"
+                android:textCursorDrawable="@null"
+                android:layout_centerHorizontal="true"
+                android:elegantTextHeight="true"
                 android:layout_gravity="center_horizontal" />
 
             <EditText
@@ -53,16 +55,14 @@
                 android:ems="10"
                 android:id="@+id/password"
                 android:hint="Password"
-                android:gravity="center_horizontal"
                 android:background="@drawable/customedittext"
-                android:layout_marginBottom="05dp"
+                android:layout_marginBottom="20dp"
                 android:textSize="15dp"
                 android:textCursorDrawable="@null"
                 android:layout_below="@+id/username"
                 android:layout_alignLeft="@+id/username"
                 android:layout_alignStart="@+id/username"
                 android:layout_gravity="center_horizontal" />
-
 
             <Button
                 style="?android:attr/buttonStyleSmall"
@@ -76,7 +76,22 @@
                 android:layout_alignTop="@+id/loginButton"
                 android:layout_alignLeft="@+id/password"
                 android:layout_alignStart="@+id/password"
-                android:layout_gravity="right|center_vertical"/>
+                android:layout_gravity="right|center_vertical"
+                android:backgroundTint="#706FDABC" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:id="@+id/loginButton"
+                android:onClick="login"
+                android:background="@drawable/signinbutton"
+                android:layout_below="@+id/password"
+                android:layout_alignRight="@+id/password"
+                android:layout_alignEnd="@+id/password"
+                android:layout_gravity="center_horizontal" />
+
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -101,31 +116,16 @@
                 android:layout_gravity="left|bottom"
                 android:visibility="gone" />
 
-            <EditText
-                android:layout_width="fill_parent"
+            <ImageButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:hint="@string/username"
-                android:id="@+id/username"
-                android:gravity="center_horizontal"
-                android:background="@drawable/customedittext"
-                android:layout_marginBottom="05dp"
-                android:textSize="15dp"
-                android:textCursorDrawable="@null"
+                android:background="@drawable/sign_in_google"
+                android:id="@+id/imageButton"
+                android:layout_alignParentTop="false"
                 android:layout_centerHorizontal="true"
-                android:elegantTextHeight="true"
-                android:layout_gravity="center_horizontal" />
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="false" />
         </RelativeLayout>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/sign_in_google"
-            android:id="@+id/imageButton"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="195dp" />
 
     </RelativeLayout>
 
