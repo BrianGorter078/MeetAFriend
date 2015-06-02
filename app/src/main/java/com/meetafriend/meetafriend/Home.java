@@ -59,7 +59,6 @@ public class Home extends Activity implements LocationListener {
 
         provider = LocationManager.GPS_PROVIDER;
         System.out.println(provider);
-        location = locationManager.requestSingleUpdate(provider);
         location = locationManager.getLastKnownLocation(provider);
         System.out.println(location);
 
