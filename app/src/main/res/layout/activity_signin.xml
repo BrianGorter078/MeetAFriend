@@ -30,8 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="80dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="40dp">
 
             <EditText
                 android:layout_width="fill_parent"
@@ -121,10 +121,10 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/sign_in_google"
                 android:id="@+id/imageButton"
-                android:layout_alignParentTop="false"
-                android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="false"
-                android:layout_alignParentRight="false" />
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/registerButton"
+                android:layout_marginTop="20dp" />
         </RelativeLayout>
 
     </RelativeLayout>
