@@ -50,4 +50,6 @@
     <string name="customizeFinds">Customize your finds</string>
     <string name="changeInSettings">Once you press this button, you will be able to change your find settings on the settings page</string>
     <string name="title_activity_other">Other</string>
+    <string name="Chat">Chat!</string>
+    <string name="dontChat">Don\'t Chat!</string>
 </resources>

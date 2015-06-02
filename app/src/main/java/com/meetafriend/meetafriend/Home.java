@@ -156,29 +156,12 @@ public class Home extends Activity implements LocationListener {
     public void meetSomeone(View view) {
 
 
-//        Intent intent = new Intent(this, Search.class);
-//        startActivity(intent);
 
-//        LongitudeEdit = (TextView) findViewById(R.id.textView14);
-//        LatitudeEdit = (TextView) findViewById(R.id.textView15);
-//
-//        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-//        Criteria criteria = new Criteria();
-//
-//        provider = locationManager.getBestProvider(criteria, true);
-//        System.out.println(provider);
-//        Location location = locationManager.getLastKnownLocation(provider);
-//        System.out.println(location);
-//
-//        if (location != null) {
-//            System.out.println("Provider " + provider + " has been selected.");
-//            onLocationChanged(location);
-//        } else {
-//            LongitudeEdit.setText("Geen locatie gevonden");
-//        }
         provider = LocationManager.GPS_PROVIDER;
         location = locationManager.getLastKnownLocation(provider);
 
+        Intent intent = new Intent(this, Found.class);
+        startActivity(intent);
 
     }
 

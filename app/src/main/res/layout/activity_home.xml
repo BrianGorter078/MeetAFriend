@@ -10,10 +10,11 @@
         android:text="@string/meetSomeone"
         android:id="@+id/meetSomeone"
         android:onClick="meetSomeone"
-        android:background="@null"
+        android:background="@drawable/signinbutton"
         android:layout_marginBottom="112dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        />
 
 
     <include
