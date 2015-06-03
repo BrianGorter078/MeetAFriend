@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    tools:context="com.meetafriend.meetafriend.Register">
+    tools:context="com.meetafriend.meetafriend.Register"
+    android:layout_marginBottom="5dp">
 
     <include
         android:id="@+id/tool_bar"

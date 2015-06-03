@@ -42,8 +42,6 @@ public class Signin extends Activity implements OnClickListener {
         bLogin = (Button) findViewById(R.id.loginButton);
         bLogin.setOnClickListener(this);
 
-        ImageButton toolbarBack = (ImageButton) findViewById(R.id.toolbarBack);
-        toolbarBack.setVisibility(View.INVISIBLE);
         ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
         toolbarFriends.setVisibility(View.INVISIBLE);
         ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);

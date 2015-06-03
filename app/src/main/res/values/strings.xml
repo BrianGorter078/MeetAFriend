@@ -11,8 +11,8 @@
     <string name="meetSomeone">Meet someone random</string>
     <string name="notifications"><b>Notifications / Sounds</b></string>
     <string name="finds"><b>Finds</b></string>
-    <string name="findFriends">Find only Friends</string>
-    <string name="onlyPicture">Only people with a picture</string>
+    <string name="findFriends">Friends Only</string>
+    <string name="onlyPicture">With pictures</string>
     <string name="showNotifications">Show Notifications</string>
     <string name="title_activity_home">home</string>
     <string name="title_activity_settings">Settings</string>
@@ -23,8 +23,8 @@
     <string name="title_activity_found">Found</string>
     <string name="title_activity_search">Search</string>
     <string name="title_activity_edit_profile">EditProfile</string>
-    <string name="editProfile">Edit Profile data</string>
-    <string name="sameInterests">Only people with same interests</string>
+    <string name="editProfile">Edit your profile</string>
+    <string name="sameInterests">Same interests</string>
     <string name="searchFor"><b>Search for:</b></string>
     <string name="male">Male</string>
     <string name="female">Female</string>

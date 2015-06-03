@@ -17,11 +17,16 @@ public class Settings extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
-        toolbarTextview.setText("Settings");
+        ImageButton tb = (ImageButton) findViewById(R.id.toolbarSettings);
+        tb.setEnabled(false);
 
         ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
-        toolbarSettings.setClickable(false);
+        toolbarSettings.setVisibility(View.INVISIBLE);
+        ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
+        toolbarFriends.setVisibility(View.INVISIBLE);
+
+        TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
+        toolbarTextview.setText("Settings");
 
         SeekBar mSeekbar = (SeekBar) findViewById(R.id.seekBar);
         final TextView seekText = (TextView) findViewById(R.id.kilometers);

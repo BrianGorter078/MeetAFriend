@@ -10,10 +10,11 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
         android:background="@drawable/ic_action_settings"
         android:onClick="settings"
-        android:id="@+id/toolbarSettings" />
+        android:id="@+id/toolbarSettings"
+        android:layout_gravity="left"
+        android:padding="5dp"/>
 
     <ImageButton
         android:layout_height="wrap_content"
@@ -21,15 +22,9 @@
         android:background="@drawable/ic_action_friends"
         android:onClick="friends"
         android:layout_gravity="right"
-        android:id="@+id/toolbarFriends" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_action_back"
-        android:onClick="back"
-        android:layout_gravity="left"
-        android:id="@+id/toolbarBack"/>
+        android:id="@+id/toolbarFriends"
+        android:layout_marginRight="11dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"

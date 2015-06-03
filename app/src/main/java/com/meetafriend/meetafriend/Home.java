@@ -46,8 +46,6 @@ public class Home extends Activity implements LocationListener {
 
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Home");
-        ImageButton toolbarBack = (ImageButton) findViewById(R.id.toolbarBack);
-        toolbarBack.setVisibility(View.INVISIBLE);
 
 
 

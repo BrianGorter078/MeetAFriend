@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.meetafriend.meetafriend.Settings">
+    tools:context="com.meetafriend.meetafriend.Settings"
+    android:layout_marginBottom="5dp">
 
     <include
         android:id="@+id/tool_bar"
@@ -14,6 +15,7 @@
         android:text="@string/notifications"
         android:id="@+id/notifications"
         android:layout_marginTop="75dp"
+        android:layout_marginLeft="5dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -47,9 +49,11 @@
         android:text="@string/finds"
         android:id="@+id/finds"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="5dp"
         android:layout_below="@+id/showNotificationSwitch"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -105,7 +109,8 @@
         android:id="@+id/editProfile"
         android:onClick="toEditProfile"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/signinbutton"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -116,7 +121,8 @@
         android:paddingTop="3dp"
         android:layout_below="@+id/onlyPicture"
         android:layout_alignLeft="@+id/onlyPicture"
-        android:layout_alignStart="@+id/onlyPicture" />
+        android:layout_alignStart="@+id/onlyPicture"
+        android:layout_marginRight="1dp"/>
 
     <Switch
         android:layout_width="wrap_content"
@@ -137,7 +143,8 @@
         android:layout_below="@+id/switch1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="5dp"/>
 
     <RadioButton
         android:layout_width="wrap_content"

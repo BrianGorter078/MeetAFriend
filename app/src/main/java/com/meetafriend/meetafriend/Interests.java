@@ -22,8 +22,7 @@ public class Interests extends Activity {
         toolbarTextview.setText("Interests");
         ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
         toolbarFriends.setVisibility(View.INVISIBLE);
-        ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
-        toolbarSettings.setVisibility(View.INVISIBLE);
+
     }
 
     public void friends(View view) {
