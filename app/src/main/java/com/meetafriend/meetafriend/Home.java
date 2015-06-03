@@ -117,7 +117,11 @@ public class Home extends Activity implements LocationListener {
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
+        String latitude2 = String.valueOf(latitude);
+        String longitude2 = String.valueOf(longitude);
 
+        LongitudeEdit.setText("Huidige Lengtegraad: " + longitude2);
+        LatitudeEdit.setText("Huidige Breedtegraad: " + latitude2);
     }
 
     @Override
@@ -140,6 +144,8 @@ public class Home extends Activity implements LocationListener {
 
         LongitudeEdit.setText("Huidige Lengtegraad: " + longitude2);
         LatitudeEdit.setText("Huidige Breedtegraad: " + latitude2);
+
+
     }
 
 
@@ -162,6 +168,7 @@ public class Home extends Activity implements LocationListener {
 
         Intent intent = new Intent(this, Found.class);
         startActivity(intent);
+
 
     }
 
