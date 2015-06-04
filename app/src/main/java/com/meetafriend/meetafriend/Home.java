@@ -73,7 +73,7 @@ public class Home extends Activity implements LocationListener {
 
             LongitudeEdit.setText("Huidige Lengtegraad: " + longitude2);
             LatitudeEdit.setText("Huidige Breedtegraad: " + latitude2);
-            onLocationChanged(location);
+
         } else {
             LongitudeEdit.setText("Geen locatie gevonden");
         }
@@ -134,14 +134,6 @@ public class Home extends Activity implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-        latitude = (double) location.getLatitude();
-        longitude = (double) location.getLongitude();
-
-        String latitude2 = String.valueOf(latitude);
-        String longitude2 = String.valueOf(longitude);
-
-        LongitudeEdit.setText("Huidige Lengtegraad: " + longitude2);
-        LatitudeEdit.setText("Huidige Breedtegraad: " + latitude2);
 
 
     }
