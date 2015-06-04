@@ -54,7 +54,7 @@ public class Signin extends Activity implements OnClickListener {
     }
 
     @Override
-    public void onClick(View v) { // TODO Auto-generated method stub
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.loginButton:
                 new AttemptLogin().execute(); // here we have used, switch case, because on login activity you may //also want to show registration button, so if the user is new ! we can go the //registration activity , other than this we could also do this without switch //case.

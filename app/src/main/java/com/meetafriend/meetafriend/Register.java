@@ -58,7 +58,7 @@ public class Register extends Activity implements View.OnClickListener {
 //        ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
 //        toolbarSettings.setVisibility(View.INVISIBLE);
     }
-    public void onClick(View v) { // TODO Auto-generated method stub
+    public void onClick(View v) {
         new AttemptRegister().execute(); // here we have used, switch case, because on login activity you may //also want to show registration button, so if the user is new ! we can go the //registration activity , other than this we could also do this without switch //case.
     }
     class AttemptRegister extends AsyncTask<String, String, String> {
@@ -86,7 +86,7 @@ public class Register extends Activity implements View.OnClickListener {
             String register_emailaddress = email.getText().toString();
             String register_age = age.getText().toString();
 
-            if(user.length()!= 0 && pass.length()!= 0){
+            if(user.length()!= 0){
                 try {
                     List<NameValuePair> params = new ArrayList<NameValuePair>();
                     params.add(new BasicNameValuePair("username", register_username));
@@ -103,10 +103,15 @@ public class Register extends Activity implements View.OnClickListener {
                         Intent ii = new Intent(Register.this, Home.class);
                         finish(); // this finish() method is used to tell android os that we are done with current //activity now! Moving to other activity
                         startActivity(ii);
+
+                    } else if(success == 0){
+
                         return json.getString(TAG_MESSAGE);
-                    } else {
+
+                    } else{
                         return json.getString(TAG_MESSAGE);
                     }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -122,6 +127,7 @@ public class Register extends Activity implements View.OnClickListener {
             if (message != null) {
                 Toast.makeText(Register.this, message, Toast.LENGTH_LONG).show();
             }
+            //email.setError("Test...");
         }
     }
 
