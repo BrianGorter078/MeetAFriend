@@ -71,8 +71,18 @@ public class Home extends Activity implements LocationListener {
             String latitude2 = String.valueOf(latitude);
             String longitude2 = String.valueOf(longitude);
 
-            LongitudeEdit.setText("Huidige Lengtegraad: " + longitude2);
-            LatitudeEdit.setText("Huidige Breedtegraad: " + latitude2);
+            com.meetafriend.meetafriend.Location location1 = new com.meetafriend.meetafriend.Location();
+            location1.setLatitude(latitude2);
+            location1.setLongitude(longitude2);
+
+            LatitudeEdit.setText(location1.getLatitude());
+            LongitudeEdit.setText(location1.getLongitude());
+
+
+         if (location1.getLatitude() != null && location1.getLongitude() != null)
+         {
+             locationManager.removeUpdates(this);
+         }
 
         } else {
             LongitudeEdit.setText("Geen locatie gevonden");
@@ -115,11 +125,7 @@ public class Home extends Activity implements LocationListener {
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
-        String latitude2 = String.valueOf(latitude);
-        String longitude2 = String.valueOf(longitude);
-
-        LongitudeEdit.setText("Huidige Lengtegraad: " + longitude2);
-        LatitudeEdit.setText("Huidige Breedtegraad: " + latitude2);
+        locationManager.removeUpdates(this);
     }
 
     @Override
