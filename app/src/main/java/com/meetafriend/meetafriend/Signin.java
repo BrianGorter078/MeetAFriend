@@ -32,6 +32,7 @@ public class Signin extends Activity implements OnClickListener {
     private static final String LOGIN_URL = "http://boermedia.com/maf/login.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
+    private static final String TAG_NO_CONNECTION = "No internet connection";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,28 +86,40 @@ public class Signin extends Activity implements OnClickListener {
             int success;
             String username = user.getText().toString();
             String password = pass.getText().toString();
-            if(user.length()!=0 && pass.length()!=0)
-            {
-                try {
-                    List<NameValuePair> params = new ArrayList<NameValuePair>();
-                    params.add(new BasicNameValuePair("username", username));
-                    params.add(new BasicNameValuePair("password", password));
-                    //Log.d("request!", "starting");
-                    JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST", params); // checking log for json response
-                    //Log.d("Login attempt", json.toString()); // success tag for json
-                    success = json.getInt(TAG_SUCCESS);
-                    if (success == 1) {
-                        Log.d("Successfully Login!", json.toString());
-                        Intent ii = new Intent(Signin.this, Home.class);
-                        finish(); // this finish() method is used to tell android os that we are done with current //activity now! Moving to other activity
-                        startActivity(ii);
-                        return json.getString(TAG_MESSAGE);
-                    } else {
-                        return json.getString(TAG_MESSAGE);
+            if (Location.isNetworkAvailable(Signin.this)) {
+                // available network
+                if (user.length() != 0 && pass.length() != 0) {
+                    try {
+                        List<NameValuePair> params = new ArrayList<NameValuePair>();
+                        params.add(new BasicNameValuePair("username", username));
+                        params.add(new BasicNameValuePair("password", password));
+                        //Log.d("request!", "starting");
+                        JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST", params); // checking log for json response
+                        //Log.d("Login attempt", json.toString()); // success tag for json
+                        success = json.getInt(TAG_SUCCESS);
+                        if (success == 1) {
+                            Log.d("Successfully Login!", json.toString());
+                            Intent ii = new Intent(Signin.this, Home.class);
+                            finish(); // this finish() method is used to tell android os that we are done with current //activity now! Moving to other activity
+                            startActivity(ii);
+                            return json.getString(TAG_MESSAGE);
+                        } else {
+                            return json.getString(TAG_MESSAGE);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Intent restart = new Intent(Signin.this, Signin.class);
+                        startActivity(restart);
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+
+
                 }
+
+
+            }else {
+                return TAG_NO_CONNECTION;
             }
             return null;
         }
