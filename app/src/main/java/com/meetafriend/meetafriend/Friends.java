@@ -23,6 +23,7 @@ public class Friends extends Activity {
 
         ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
         toolbarFriends.setClickable(false);
+        toolbarFriends.setVisibility(View.INVISIBLE);
     }
 
     public void settings(View view) {

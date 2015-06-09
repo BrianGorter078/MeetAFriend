@@ -1,5 +1,9 @@
 package com.meetafriend.meetafriend;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 /**
  * Created by briang on 8-6-2015.
  */
@@ -21,5 +25,8 @@ public class Location {
 
     public String getLongitude() {
         return this.longitude;
+    }
+    public static boolean isNetworkAvailable(Context context) {
+        return ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo() != null;
     }
 }
