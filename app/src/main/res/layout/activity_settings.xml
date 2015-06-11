@@ -40,7 +40,8 @@
         android:layout_alignBottom="@+id/showNotifications"
         android:layout_alignLeft="@+id/onlyFriendsSwitch"
         android:layout_alignStart="@+id/onlyFriendsSwitch"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:onClick="checkNotifications"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -84,13 +85,14 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/OnlyPictureSwitchswitch"
+        android:id="@+id/OnlyPictureSwitch"
         android:checked="false"
         android:layout_alignTop="@+id/onlyPicture"
-        android:layout_alignLeft="@+id/switch1"
-        android:layout_alignStart="@+id/switch1"
+        android:layout_alignLeft="@+id/sameInterests"
+        android:layout_alignStart="@+id/sameInterests"
         android:paddingBottom="2dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:onClick="checkOnlyPicture"/>
 
     <Switch
         android:layout_width="wrap_content"
@@ -100,7 +102,8 @@
         android:layout_alignBottom="@+id/findFriends"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:onClick="checkFriends"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -127,12 +130,13 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/switch1"
+        android:id="@+id/sameInterests"
         android:checked="false"
         android:layout_alignTop="@+id/textView2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:onClick="checkInterests"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -140,7 +144,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/searchFor"
         android:id="@+id/searchFor"
-        android:layout_below="@+id/switch1"
+        android:layout_below="@+id/sameInterests"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="40dp"
@@ -183,8 +187,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"
         android:layout_below="@+id/searchRadius"
-        android:layout_alignRight="@+id/switch1"
-        android:layout_alignEnd="@+id/switch1"
+        android:layout_alignRight="@+id/sameInterests"
+        android:layout_alignEnd="@+id/sameInterests"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
         android:onClick="getProgress"

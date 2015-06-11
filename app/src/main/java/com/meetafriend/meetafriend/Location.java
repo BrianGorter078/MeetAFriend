@@ -26,7 +26,9 @@ public class Location {
     public String getLongitude() {
         return this.longitude;
     }
+
     public static boolean isNetworkAvailable(Context context) {
         return ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo() != null;
     }
+
 }
