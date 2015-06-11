@@ -37,6 +37,7 @@ public class Register extends Activity implements View.OnClickListener {
     private static final String REGISTER_URL = "http://boermedia.com/maf/register.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
+    private String gender;
 
 
     @Override
@@ -154,8 +155,10 @@ public class Register extends Activity implements View.OnClickListener {
         RadioButton female2 = (RadioButton) findViewById(R.id.youWantRadiobuttonFemale);
 
         if(female.isChecked()) {
+            gender = "F";
             male.setChecked(false);
             female.setChecked(true);
+            System.out.println(gender);
         }
         else if(!female.isChecked()) {
             male.setChecked(true);
@@ -163,8 +166,10 @@ public class Register extends Activity implements View.OnClickListener {
         }
 
         if(female2.isChecked()) {
+            gender = "F";
             male2.setChecked(false);
             female2.setChecked(true);
+            System.out.println(gender);
         }
         else if(!female2.isChecked()) {
             male2.setChecked(true);
@@ -179,8 +184,10 @@ public class Register extends Activity implements View.OnClickListener {
         RadioButton female2 = (RadioButton) findViewById(R.id.youWantRadiobuttonFemale);
 
         if(male.isChecked()) {
+            gender = "M";
             male.setChecked(true);
             female.setChecked(false);
+            System.out.println(gender);
         }
         else if(!male.isChecked()) {
             male.setChecked(false);
@@ -188,8 +195,10 @@ public class Register extends Activity implements View.OnClickListener {
         }
 
         if(male2.isChecked()) {
+            gender = "M";
             male2.setChecked(true);
             female2.setChecked(false);
+            System.out.println(gender);
         }
         else if(!male2.isChecked()) {
             male2.setChecked(false);
