@@ -277,7 +277,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/logOut"
                         android:id="@+id/userLogOut"
-                        android:onClick="toEditProfile"
+                        android:onClick="toLogin"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center_horizontal"

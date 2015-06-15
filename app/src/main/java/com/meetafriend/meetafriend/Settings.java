@@ -72,6 +72,11 @@ public class Settings extends Activity {
         startActivity(intent);
     }
 
+    public void toLogin(View view) {
+        Intent intent = new Intent(this, Signin.class);
+        startActivity(intent);
+    }
+
     public void checkbuttonsFemale(View view) {
         RadioButton female = (RadioButton) findViewById(R.id.searchForFemale);
         RadioButton male = (RadioButton) findViewById(R.id.searchForMale);
