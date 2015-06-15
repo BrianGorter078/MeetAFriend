@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 
@@ -25,6 +26,11 @@ public class Interests extends Activity {
         ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
         toolbarFriends.setVisibility(View.INVISIBLE);
 
+        SearchView sv = (SearchView) findViewById(R.id.interestsSearch);
+
+        sv.setIconifiedByDefault(false);
+        sv.setIconified(false);
+        sv.se
     }
 
     public void friends(View view) {
