@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,8 @@ public class Home extends Activity implements LocationListener {
     private String xusername = "brian";
     double longitude;
     double latitude;
+    double offsetMeters1;
+    double offsetMeters2;
     private LocationManager locationManager;
     private String provider;
     TextView LongitudeEdit;
@@ -157,7 +160,11 @@ public class Home extends Activity implements LocationListener {
 
     public void meetSomeone(View view) {
 
+        offsetMeters1 = 200;
+        offsetMeters2 = 200;
 
+        LatLongCalculator latLongCalculator = new LatLongCalculator();
+        latLongCalculator.offset(latitude, longitude, offsetMeters1, offsetMeters2);
 
         provider = LocationManager.GPS_PROVIDER;
         location = locationManager.getLastKnownLocation(provider);
