@@ -30,7 +30,6 @@ public class Interests extends Activity {
 
         sv.setIconifiedByDefault(false);
         sv.setIconified(false);
-        sv.se
     }
 
     public void friends(View view) {
