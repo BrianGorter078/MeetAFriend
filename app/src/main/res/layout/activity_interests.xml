@@ -4,11 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.meetafriend.meetafriend.Interests"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    android:background="#ffffff">
 
     <include
         android:id="@+id/tool_bar"
         layout="@layout/toolbar"></include>
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/interestsSearch"
+        android:layout_below="@+id/tool_bar"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
