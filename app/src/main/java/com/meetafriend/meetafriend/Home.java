@@ -160,8 +160,8 @@ public class Home extends Activity implements LocationListener {
 
     public void meetSomeone(View view) {
 
-        offsetMeters1 = 10000/1.4;
-        offsetMeters2 = 10000/1.4;
+        offsetMeters1 = 10000;
+        offsetMeters2 = 10000;
 
         LatLongCalculator latLongCalculator = new LatLongCalculator();
         latLongCalculator.offset(latitude, longitude, offsetMeters1, offsetMeters2);
