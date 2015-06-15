@@ -8,199 +8,297 @@
         android:id="@+id/tool_bar"
         layout="@layout/toolbar"></include>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/notifications"
-        android:id="@+id/notifications"
-        android:layout_marginTop="75dp"
-        android:layout_marginLeft="5dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/showNotifications"
-        android:id="@+id/showNotifications"
-        android:paddingTop="3dp"
-        android:layout_below="@+id/notifications"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp" />
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/showNotificationSwitch"
-        android:checked="false"
-        android:layout_alignBottom="@+id/showNotifications"
-        android:layout_alignLeft="@+id/onlyFriendsSwitch"
-        android:layout_alignStart="@+id/onlyFriendsSwitch"
-        android:layout_marginRight="10dp"
-        android:onClick="checkNotifications"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/finds"
-        android:id="@+id/finds"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="5dp"
-        android:layout_below="@+id/showNotificationSwitch"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/findFriends"
-        android:id="@+id/findFriends"
-        android:paddingTop="3dp"
-        android:layout_below="@+id/finds"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/onlyPicture"
-        android:id="@+id/onlyPicture"
-        android:paddingTop="3dp"
-        android:layout_below="@+id/findFriends"
-        android:layout_alignLeft="@+id/findFriends"
-        android:layout_alignStart="@+id/findFriends"
-        android:layout_marginBottom="5dp" />
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/OnlyPictureSwitch"
-        android:checked="false"
-        android:layout_alignTop="@+id/onlyPicture"
-        android:layout_alignLeft="@+id/sameInterests"
-        android:layout_alignStart="@+id/sameInterests"
-        android:paddingBottom="2dp"
-        android:layout_marginRight="10dp"
-        android:onClick="checkOnlyPicture"/>
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/onlyFriendsSwitch"
-        android:checked="false"
-        android:layout_alignBottom="@+id/findFriends"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:onClick="checkFriends"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/editProfile"
-        android:id="@+id/editProfile"
-        android:onClick="toEditProfile"
+        android:layout_gravity="center_horizontal"
+        android:clickable="false"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/signinbutton"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="56dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/sameInterests"
-        android:id="@+id/textView2"
-        android:paddingTop="3dp"
-        android:layout_below="@+id/onlyPicture"
-        android:layout_alignLeft="@+id/onlyPicture"
-        android:layout_alignStart="@+id/onlyPicture"
-        android:layout_marginRight="1dp"/>
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView" >
 
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sameInterests"
-        android:checked="false"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:onClick="checkInterests"/>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/relativeLayout">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/searchFor"
-        android:id="@+id/searchFor"
-        android:layout_below="@+id/sameInterests"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="5dp"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="40dp">
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/male"
-        android:id="@+id/searchForMale"
-        android:checked="false"
-        android:layout_below="@+id/searchFor"
-        android:layout_toRightOf="@+id/finds"
-        android:layout_toEndOf="@+id/finds"
-        android:onClick="checkbuttonsMale"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@android:color/black"
+                        android:text="@string/notifications"
+                        android:id="@+id/notifications"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="40dp"
+                        android:layout_gravity="center_horizontal|top" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/female"
-        android:id="@+id/searchForFemale"
-        android:checked="false"
-        android:onClick="checkbuttonsFemale"
-        android:layout_alignTop="@+id/searchForMale"
-        android:layout_toRightOf="@+id/notifications"
-        android:layout_toEndOf="@+id/notifications" />
+                    <GridLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginBottom="40dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/searchRadius"
-        android:id="@+id/searchRadius"
-        android:layout_marginTop="33dp"
-        android:layout_below="@+id/searchForFemale"
-        android:layout_centerHorizontal="true" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@android:color/black"
+                            android:text="@string/showNotifications"
+                            android:id="@+id/showNotifications"
+                            android:paddingTop="3dp"
+                            android:layout_below="@+id/notifications"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
 
-    <SeekBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:layout_below="@+id/searchRadius"
-        android:layout_alignRight="@+id/sameInterests"
-        android:layout_alignEnd="@+id/sameInterests"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:onClick="getProgress"
-        android:max="100"/>
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/showNotificationSwitch"
+                            android:checked="false"
+                            android:layout_alignBottom="@+id/showNotifications"
+                            android:layout_alignLeft="@+id/onlyFriendsSwitch"
+                            android:layout_alignStart="@+id/onlyFriendsSwitch"
+                            android:onClick="checkNotifications"
+                            android:layout_gravity="right" />
+                    </GridLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/kilometers"
-        android:id="@+id/kilometers"
-        android:layout_below="@+id/seekBar"
-        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@android:color/black"
+                        android:text="@string/finds"
+                        android:id="@+id/finds"
+                        android:layout_below="@+id/showNotificationSwitch"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="center_horizontal|top"
+                        android:layout_marginBottom="40dp" />
+
+                    <GridLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@android:color/black"
+                            android:text="@string/findFriends"
+                            android:id="@+id/findFriends"
+                            android:paddingTop="3dp"
+                            android:layout_below="@+id/finds"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/onlyFriendsSwitch"
+                            android:checked="false"
+                            android:layout_alignBottom="@+id/findFriends"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:onClick="checkFriends"
+                            android:layout_gravity="right" />
+                    </GridLayout>
+
+                    <GridLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@android:color/black"
+                            android:text="@string/onlyPicture"
+                            android:id="@+id/onlyPicture"
+                            android:paddingTop="3dp"
+                            android:layout_below="@+id/findFriends"
+                            android:layout_alignLeft="@+id/findFriends"
+                            android:layout_alignStart="@+id/findFriends" />
+
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/OnlyPictureSwitch"
+                            android:checked="false"
+                            android:layout_alignTop="@+id/onlyPicture"
+                            android:layout_alignLeft="@+id/sameInterests"
+                            android:layout_alignStart="@+id/sameInterests"
+                            android:paddingBottom="2dp"
+                            android:onClick="checkOnlyPicture"
+                            android:layout_gravity="right" />
+
+                    </GridLayout>
+
+                    <GridLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginBottom="40dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@android:color/black"
+                            android:text="@string/sameInterests"
+                            android:id="@+id/textView2"
+                            android:paddingTop="3dp"
+                            android:layout_below="@+id/onlyPicture"
+                            android:layout_alignLeft="@+id/onlyPicture"
+                            android:layout_alignStart="@+id/onlyPicture"
+                            android:layout_marginRight="1dp"/>
+
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/sameInterests"
+                            android:checked="false"
+                            android:layout_alignTop="@+id/textView2"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:onClick="checkInterests"
+                            android:layout_gravity="right" />
+                    </GridLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@android:color/black"
+                        android:text="@string/searchFor"
+                        android:id="@+id/searchFor"
+                        android:layout_below="@+id/sameInterests"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="center_horizontal|top"
+                        android:layout_marginBottom="40dp" />
+
+                    <GridLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginBottom="40dp">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/male"
+                            android:id="@+id/searchForMale"
+                            android:checked="false"
+                            android:layout_below="@+id/searchFor"
+                            android:layout_toRightOf="@+id/finds"
+                            android:layout_toEndOf="@+id/finds"
+                            android:onClick="checkbuttonsMale"
+                            android:layout_gravity="left" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/female"
+                            android:id="@+id/searchForFemale"
+                            android:checked="false"
+                            android:onClick="checkbuttonsFemale"
+                            android:layout_alignTop="@+id/searchForMale"
+                            android:layout_toRightOf="@+id/notifications"
+                            android:layout_toEndOf="@+id/notifications"
+                            android:layout_gravity="right" />
+                    </GridLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@android:color/black"
+                        android:text="@string/searchRadius"
+                        android:id="@+id/searchRadius"
+                        android:layout_below="@+id/searchForFemale"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal|top"
+                        android:layout_marginBottom="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/black"
+                        android:text="@string/kilometers"
+                        android:id="@+id/kilometers"
+                        android:layout_below="@+id/seekBar"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal" />
+
+                    <SeekBar
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/seekBar"
+                        android:layout_below="@+id/searchRadius"
+                        android:layout_alignRight="@+id/sameInterests"
+                        android:layout_alignEnd="@+id/sameInterests"
+                        android:layout_alignLeft="@+id/textView2"
+                        android:layout_alignStart="@+id/textView2"
+                        android:onClick="getProgress"
+                        android:max="100"
+                        android:layout_marginBottom="40dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@android:color/black"
+                        android:text="@string/accountSettings"
+                        android:id="@+id/LogOutSettings"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="center_horizontal|top"
+                        android:layout_marginBottom="40dp" />
+
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/logOut"
+                        android:id="@+id/userLogOut"
+                        android:onClick="toEditProfile"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="40dp" />
+
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/editProfile"
+                        android:id="@+id/editProfile"
+                        android:onClick="toEditProfile"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/signinbutton"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="40dp"
+                        android:layout_marginTop="20dp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
 
 </RelativeLayout>
