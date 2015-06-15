@@ -133,7 +133,8 @@
                         <RadioGroup
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="right">
+                            android:layout_gravity="right"
+                            android:id="@+id/radio_gender">
 
                             <LinearLayout
                                 android:orientation="horizontal"
@@ -145,7 +146,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/male"
-                                    android:id="@+id/youAreRadiobuttonMale"
+                                    android:id="@+id/gender0"
                                     android:onClick="checkbuttonsMale"
                                     android:checked="false" />
 
@@ -154,7 +155,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/female"
                                     android:onClick="checkbuttonsFemale"
-                                    android:id="@+id/youAreRadiobuttonFemale"
+                                    android:id="@+id/gender1"
                                     android:checked="false"
                                     android:layout_marginLeft="20dp" />
                             </LinearLayout>
