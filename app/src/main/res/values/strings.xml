@@ -54,5 +54,6 @@
     <string name="dontChat">Don\'t Chat!</string>
     <string name="logOut">Logout</string>
     <string name="accountSettings">Account Settings</string>
+    <string name="yourChoice">Your Choices:</string>
 
 </resources>

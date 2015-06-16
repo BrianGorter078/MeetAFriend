@@ -102,7 +102,7 @@ public class Signin extends Activity implements OnClickListener, LocationListene
     }
 
     public void register(View view) {
-        Intent intent = new Intent(this, Register.class);
+        Intent intent = new Intent(this,Register.class);
         startActivity(intent);
     }
 
