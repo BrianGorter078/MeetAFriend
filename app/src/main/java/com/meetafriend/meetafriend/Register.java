@@ -156,7 +156,7 @@ public class Register extends Activity implements View.OnClickListener {
                     success = json.getInt(TAG_SUCCESS);
                     if (success == 1) {
                         Log.d("Successfully registered!", json.toString());
-                        Intent ii = new Intent(Register.this, Home.class);
+                        Intent ii = new Intent(Register.this, Interests.class);
                         finish(); // this finish() method is used to tell android os that we are done with current //activity now! Moving to other activity
                         startActivity(ii);
 
