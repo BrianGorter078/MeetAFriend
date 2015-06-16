@@ -24,8 +24,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class Signin extends Activity implements OnClickListener , LocationListener {
-    private EditText user, pass, latitude, longitude;
+public class Signin extends Activity implements OnClickListener, LocationListener {
+    private EditText user, pass;
     private Button bLogin;
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -67,15 +67,12 @@ public class Signin extends Activity implements OnClickListener , LocationListen
         toolbarSettings.setVisibility(View.INVISIBLE);
 
 
-
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         provider = LocationManager.GPS_PROVIDER;
         System.out.println(provider);
         location = locationManager.getLastKnownLocation(provider);
         System.out.println(location);
-
-
 
 
         if (location != null) {
@@ -91,8 +88,7 @@ public class Signin extends Activity implements OnClickListener , LocationListen
             location1.setLongitude(longitude2);
             System.out.print("Locatieeee");
 
-            if (location1.getLatitude() != null && location1.getLongitude() != null)
-            {
+            if (location1.getLatitude() != null && location1.getLongitude() != null) {
                 locationManager.removeUpdates(this);
                 System.out.print("We hebben er 1!!");
             }
@@ -109,9 +105,9 @@ public class Signin extends Activity implements OnClickListener , LocationListen
         Intent intent = new Intent(this, Register.class);
         startActivity(intent);
     }
+
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
 
 
@@ -121,17 +117,6 @@ public class Signin extends Activity implements OnClickListener , LocationListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.loginButton:
-
-                offsetMeters1 = 10000;
-                offsetMeters2 = 10000;
-
-                LatLongCalculator latLongCalculator = new LatLongCalculator();
-                latLongCalculator.offset(latitude, longitude, offsetMeters1, offsetMeters2);
-
-                provider = LocationManager.GPS_PROVIDER;
-                location = locationManager.getLastKnownLocation(provider);
-
-                System.out.print("Yeahhh");
                 new AttemptLogin().execute(); // here we have used, switch case, because on login activity you may //also want to show registration button, so if the user is new ! we can go the //registration activity , other than this we could also do this without switch //case.
             default:
                 break;
@@ -186,10 +171,25 @@ public class Signin extends Activity implements OnClickListener , LocationListen
 
         @Override
         protected String doInBackground(String... args) {
+            offsetMeters1 = 10000;
+            offsetMeters2 = 10000;
+
+            LatLongCalculator latLongCalculator = new LatLongCalculator();
+            latLongCalculator.offset(latitude, longitude, offsetMeters1, offsetMeters2);
+
+            provider = LocationManager.GPS_PROVIDER;
+            location = locationManager.getLastKnownLocation(provider);
+
+            //System.out.print("Yeahhh");
+
             // here Check for success tag
             int success;
             String username = user.getText().toString();
             String password = pass.getText().toString();
+            String latitude_db = String.valueOf(latitude);
+            String longitude_db = String.valueOf(longitude);
+
+
             if (Location.isNetworkAvailable(Signin.this)) {
                 // available network
                 if (user.length() != 0 && pass.length() != 0) {
@@ -197,6 +197,8 @@ public class Signin extends Activity implements OnClickListener , LocationListen
                         List<NameValuePair> params = new ArrayList<NameValuePair>();
                         params.add(new BasicNameValuePair("username", username));
                         params.add(new BasicNameValuePair("password", password));
+                        params.add(new BasicNameValuePair("latitude", latitude_db));
+                        params.add(new BasicNameValuePair("longitude", longitude_db));
                         //Log.d("request!", "starting");
                         JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST", params); // checking log for json response
                         //Log.d("Login attempt", json.toString()); // success tag for json
@@ -222,7 +224,7 @@ public class Signin extends Activity implements OnClickListener , LocationListen
                 }
 
 
-            }else {
+            } else {
                 return TAG_NO_CONNECTION;
             }
             return null;
