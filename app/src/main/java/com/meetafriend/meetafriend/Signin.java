@@ -25,7 +25,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Signin extends Activity implements OnClickListener , LocationListener {
-    private EditText user, pass, latitude, longitude;
+    private EditText user, pass; //, latitude, longitude
     private Button bLogin;
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -132,6 +132,7 @@ public class Signin extends Activity implements OnClickListener , LocationListen
                 location = locationManager.getLastKnownLocation(provider);
 
                 System.out.print("Yeahhh");
+
                 new AttemptLogin().execute(); // here we have used, switch case, because on login activity you may //also want to show registration button, so if the user is new ! we can go the //registration activity , other than this we could also do this without switch //case.
             default:
                 break;
