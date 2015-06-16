@@ -18,5 +18,11 @@
         android:layout_below="@+id/tool_bar"
         android:layout_centerHorizontal="true" />
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/interestsSearch"
+        android:id="@+id/interestsListView"/>
+
 
 </RelativeLayout>
