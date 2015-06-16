@@ -1,6 +1,5 @@
 package com.meetafriend.meetafriend;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +24,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+<<<<<<< Updated upstream
 public class Signin extends Activity implements OnClickListener , LocationListener {
     private EditText user, pass;
+=======
+public class Signin extends Activity implements OnClickListener {
+    private EditText user, pass, latitude, longitude;
+>>>>>>> Stashed changes
     private Button bLogin;
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -55,6 +59,10 @@ public class Signin extends Activity implements OnClickListener , LocationListen
         setContentView(R.layout.activity_signin);
         user = (EditText) findViewById(R.id.username);
         pass = (EditText) findViewById(R.id.password);
+        latitude = (EditText) findViewById(R.id.latitude);
+        longitude = (EditText) findViewById(R.id.longitude);
+
+
         bLogin = (Button) findViewById(R.id.loginButton);
         bLogin.setOnClickListener(this);
 
