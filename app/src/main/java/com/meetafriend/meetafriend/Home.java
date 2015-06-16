@@ -107,7 +107,7 @@ public class Home extends Activity implements LocationListener {
     public void meetSomeone(View view) {
 
 
-        Intent intent = new Intent(this, Found.class);
+        Intent intent = new Intent(this, Interests.class);
         startActivity(intent);
 
 

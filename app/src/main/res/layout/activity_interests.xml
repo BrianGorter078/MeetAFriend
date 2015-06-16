@@ -19,10 +19,11 @@
         android:layout_centerHorizontal="true" />
 
     <ListView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/interestsSearch"
-        android:id="@+id/interestsListView"/>
+        android:id="@+id/interestsListView"
+        android:entries="@array/hobbies"/>
 
 
 </RelativeLayout>
