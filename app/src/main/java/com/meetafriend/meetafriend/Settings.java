@@ -68,7 +68,7 @@ public class Settings extends Activity {
     }
 
     public void toEditProfile(View view) {
-        Intent intent = new Intent(this, EditProfile.class);
+        Intent intent = new Intent(this, Interests.class);
         startActivity(intent);
     }
 
