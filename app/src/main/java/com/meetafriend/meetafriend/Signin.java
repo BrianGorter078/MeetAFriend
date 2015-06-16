@@ -86,15 +86,17 @@ public class Signin extends Activity implements OnClickListener , LocationListen
             com.meetafriend.meetafriend.Location location1 = new com.meetafriend.meetafriend.Location();
             location1.setLatitude(latitude2);
             location1.setLongitude(longitude2);
-
+            System.out.print("Locatieeee");
 
             if (location1.getLatitude() != null && location1.getLongitude() != null)
             {
                 locationManager.removeUpdates(this);
+                System.out.print("We hebben er 1!!");
             }
 
         } else {
             //Do something without location
+            System.out.print("Geen locatie");
         }
 
 
@@ -126,6 +128,7 @@ public class Signin extends Activity implements OnClickListener , LocationListen
                 provider = LocationManager.GPS_PROVIDER;
                 location = locationManager.getLastKnownLocation(provider);
 
+                System.out.print("Yeahhh");
                 new AttemptLogin().execute(); // here we have used, switch case, because on login activity you may //also want to show registration button, so if the user is new ! we can go the //registration activity , other than this we could also do this without switch //case.
             default:
                 break;
@@ -142,6 +145,8 @@ public class Signin extends Activity implements OnClickListener , LocationListen
 
         location1.setLatitude(latitude2);
         location1.setLongitude(longitude2);
+
+        System.out.print("Nieuwe locatie !!" + latitude2 + "" + longitude2);
     }
 
     @Override

@@ -30,15 +30,6 @@ public class Home extends Activity implements LocationListener {
     EditText pEdit;
     private String xpassword = "123";
     private String xusername = "brian";
-    double longitude;
-    double latitude;
-    double offsetMeters1;
-    double offsetMeters2;
-    private LocationManager locationManager;
-    private String provider;
-    TextView LongitudeEdit;
-    TextView LatitudeEdit;
-    Location location;
 
 
     @Override
@@ -49,48 +40,6 @@ public class Home extends Activity implements LocationListener {
 
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Home");
-
-
-
-        LongitudeEdit = (TextView) findViewById(R.id.textView14);
-        LatitudeEdit = (TextView) findViewById(R.id.textView15);
-
-
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-        provider = LocationManager.GPS_PROVIDER;
-        System.out.println(provider);
-        location = locationManager.getLastKnownLocation(provider);
-        System.out.println(location);
-
-
-
-
-        if (location != null) {
-            System.out.println("Provider " + provider + " has been selected.");
-            latitude = location.getLatitude();
-            longitude = location.getLongitude();
-
-            String latitude2 = String.valueOf(latitude);
-            String longitude2 = String.valueOf(longitude);
-
-            com.meetafriend.meetafriend.Location location1 = new com.meetafriend.meetafriend.Location();
-            location1.setLatitude(latitude2);
-            location1.setLongitude(longitude2);
-
-            LatitudeEdit.setText(location1.getLatitude());
-            LongitudeEdit.setText(location1.getLongitude());
-
-
-         if (location1.getLatitude() != null && location1.getLongitude() != null)
-         {
-             locationManager.removeUpdates(this);
-         }
-
-        } else {
-            LongitudeEdit.setText("Geen locatie gevonden");
-        }
-
 
     }
 
@@ -113,22 +62,19 @@ public class Home extends Activity implements LocationListener {
     @Override
     protected void onResume() {
         super.onResume();
-        if (locationManager.getAllProviders() != null) {
 
-            locationManager.requestLocationUpdates(provider, 0, 0, this);
-        }
     }
 
     /* Remove the locationlistener updates when Activity is paused */
     @Override
     protected void onPause() {
         super.onPause();
-        locationManager.removeUpdates(this);
+
     }
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
-        locationManager.removeUpdates(this);
+
     }
 
     @Override
@@ -160,14 +106,6 @@ public class Home extends Activity implements LocationListener {
 
     public void meetSomeone(View view) {
 
-        offsetMeters1 = 10000;
-        offsetMeters2 = 10000;
-
-        LatLongCalculator latLongCalculator = new LatLongCalculator();
-        latLongCalculator.offset(latitude, longitude, offsetMeters1, offsetMeters2);
-
-        provider = LocationManager.GPS_PROVIDER;
-        location = locationManager.getLastKnownLocation(provider);
 
         Intent intent = new Intent(this, Found.class);
         startActivity(intent);
