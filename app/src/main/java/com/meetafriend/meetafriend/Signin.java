@@ -11,7 +11,10 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,7 +25,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class Signin extends Activity implements OnClickListener {
+public class Signin extends Activity implements OnClickListener , LocationListener {
     private EditText user, pass;
     private Button bLogin;
     // Progress Dialog
@@ -33,6 +36,18 @@ public class Signin extends Activity implements OnClickListener {
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
     private static final String TAG_NO_CONNECTION = "No internet connection";
+    private String provider;
+
+    double longitude;
+    double latitude;
+
+    double offsetMeters1;
+    double offsetMeters2;
+
+    android.location.Location location;
+    Location location1;
+
+    LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,21 +62,102 @@ public class Signin extends Activity implements OnClickListener {
         toolbarFriends.setVisibility(View.INVISIBLE);
         ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
         toolbarSettings.setVisibility(View.INVISIBLE);
+
+
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        provider = LocationManager.GPS_PROVIDER;
+        System.out.println(provider);
+        location = locationManager.getLastKnownLocation(provider);
+        System.out.println(location);
+
+
+
+
+        if (location != null) {
+            System.out.println("Provider " + provider + " has been selected.");
+            latitude = location.getLatitude();
+            longitude = location.getLongitude();
+
+            String latitude2 = String.valueOf(latitude);
+            String longitude2 = String.valueOf(longitude);
+
+            com.meetafriend.meetafriend.Location location1 = new com.meetafriend.meetafriend.Location();
+            location1.setLatitude(latitude2);
+            location1.setLongitude(longitude2);
+
+
+            if (location1.getLatitude() != null && location1.getLongitude() != null)
+            {
+                locationManager.removeUpdates(this);
+            }
+
+        } else {
+            //Do something without location
+        }
+
+
     }
 
     public void register(View view) {
         Intent intent = new Intent(this, Register.class);
         startActivity(intent);
     }
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+
+
+    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.loginButton:
+
+                offsetMeters1 = 10000;
+                offsetMeters2 = 10000;
+
+                LatLongCalculator latLongCalculator = new LatLongCalculator();
+                latLongCalculator.offset(latitude, longitude, offsetMeters1, offsetMeters2);
+
+                provider = LocationManager.GPS_PROVIDER;
+                location = locationManager.getLastKnownLocation(provider);
+
                 new AttemptLogin().execute(); // here we have used, switch case, because on login activity you may //also want to show registration button, so if the user is new ! we can go the //registration activity , other than this we could also do this without switch //case.
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onLocationChanged(android.location.Location location) {
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+
+        String latitude2 = String.valueOf(latitude);
+        String longitude2 = String.valueOf(longitude);
+
+        location1.setLatitude(latitude2);
+        location1.setLongitude(longitude2);
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+        locationManager.removeUpdates(this);
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+        locationManager.removeUpdates(this);
     }
 
     class AttemptLogin extends AsyncTask<String, String, String> {
