@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
@@ -26,6 +27,10 @@ import android.widget.Toast;
 
 public class Signin extends Activity implements OnClickListener, LocationListener {
 
+    public static final String PREFS_NAME = "Login";
+
+    String username;
+    String password;
     private EditText user, pass;
     private Button bLogin;
     // Progress Dialog
@@ -100,11 +105,30 @@ public class Signin extends Activity implements OnClickListener, LocationListene
         }
 
 
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        username = settings.getString("Username", null);
+        password = settings.getString("Password", null);
+
+        user.setText(username);
+        pass.setText(password);
+
+
     }
 
     public void register(View view) {
         Intent intent = new Intent(this, Interests.class);
         startActivity(intent);
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("Username",username);
+        editor.putString("Password",password);
+        editor.commit();
     }
 
     @Override
@@ -118,6 +142,9 @@ public class Signin extends Activity implements OnClickListener, LocationListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.loginButton:
+                username = user.getText().toString();
+                password = pass.getText().toString();
+
                 new AttemptLogin().execute(); // here we have used, switch case, because on login activity you may //also want to show registration button, so if the user is new ! we can go the //registration activity , other than this we could also do this without switch //case.
             default:
                 break;
