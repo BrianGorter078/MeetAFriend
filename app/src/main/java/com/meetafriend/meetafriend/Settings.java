@@ -15,18 +15,28 @@ import android.widget.TextView;
 
 public class Settings extends Activity {
 
-    String genderWant;
-    String searchFor;
-    String interests;
-    String friends;
-    String pictures;
-    String notifications;
+    public static final String PREFS_NAME = "Settings";
+    boolean genderWant;
+    boolean interests;
+    boolean friends;
+    boolean pictures;
+    boolean notifications;
+    int distance;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+
+
+        Switch sameInterests = (Switch) findViewById(R.id.sameInterests);
+        Switch friendsCheck = (Switch) findViewById(R.id.onlyFriendsSwitch);
+        Switch onlyPicture = (Switch) findViewById(R.id.OnlyPictureSwitch);
+        Switch showNotficiations = (Switch) findViewById(R.id.showNotificationSwitch);
+        RadioButton male = (RadioButton) findViewById(R.id.searchForMale);
+        RadioButton female = (RadioButton) findViewById(R.id.searchForFemale);
 
         ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
         toolbarSettings.setEnabled(false);
@@ -41,10 +51,75 @@ public class Settings extends Activity {
         SeekBar mSeekbar = (SeekBar) findViewById(R.id.seekBar);
         final TextView seekText = (TextView) findViewById(R.id.kilometers);
 
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        interests = settings.getBoolean("Interests", false);
+        friends = settings.getBoolean("Friends", false);
+        pictures = settings.getBoolean("Pictures", false);
+        notifications = settings.getBoolean("Notifications", false);
+        distance = settings.getInt("Distance", 0);
+        genderWant = settings.getBoolean("Gender", false);
+
+
+        if(interests == true)
+        {
+            sameInterests.setChecked(true);
+        }
+        else
+        {
+            sameInterests.setChecked(false);
+        }
+
+        if(pictures == true)
+        {
+            onlyPicture.setChecked(true);
+        }
+        else
+        {
+            onlyPicture.setChecked(false);
+        }
+
+        if(friends == true)
+        {
+            friendsCheck.setChecked(true);
+        }
+        else
+        {
+            friendsCheck.setChecked(false);
+        }
+
+        if(notifications == true)
+        {
+            showNotficiations.setChecked(true);
+        }
+        else
+        {
+            showNotficiations.setChecked(false);
+        }
+        if(distance > 0)
+        {
+            mSeekbar.setProgress(distance);
+            seekText.setText(distance + " KM");
+        }
+        else
+        {
+            mSeekbar.setProgress(0);
+        }
+        if(genderWant == true)
+        {
+            male.setChecked(true);
+        }
+        else
+        {
+            female.setChecked(true);
+        }
+
 
         mSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                seekText.setText(Integer.toString(progress) + " KM");
+
+                seekText.setText(progress + " KM");
+
+                distance = progress;
             }
 
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -56,6 +131,20 @@ public class Settings extends Activity {
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean("Interests", interests);
+        editor.putBoolean("Friends",friends);
+        editor.putBoolean("Pictures", pictures);
+        editor.putBoolean("Notifications", notifications);
+        editor.putBoolean("Gender", genderWant);
+        editor.putInt("Distance", distance);
+        editor.commit();
+    }
 
     public void friends(View view) {
         Intent intent = new Intent(this, Friends.class);
@@ -82,13 +171,14 @@ public class Settings extends Activity {
         RadioButton male = (RadioButton) findViewById(R.id.searchForMale);
 
         if (female.isChecked()) {
-            genderWant = "F";
+            genderWant = false;
             male.setChecked(false);
             female.setChecked(true);
 
         } else if (!female.isChecked()) {
             male.setChecked(true);
             female.setChecked(false);
+
         }
 
     }
@@ -99,25 +189,27 @@ public class Settings extends Activity {
 
 
         if (male.isChecked()) {
-            genderWant = "M";
             male.setChecked(true);
             female.setChecked(false);
+            genderWant = true;
 
         } else if (!male.isChecked()) {
             male.setChecked(false);
             female.setChecked(true);
+
         }
     }
 
 
     public void checkInterests(View view) {
+
         Switch sameInterests = (Switch) findViewById(R.id.sameInterests);
 
         if(sameInterests.isChecked()) {
-            interests = "You son of a bitch! #brian == noep";
+            interests = true;
             System.out.println(interests);
         } else {
-            interests = "WE LOST!";
+            interests = false;
             System.out.println(interests);
         }
 
@@ -127,35 +219,36 @@ public class Settings extends Activity {
         Switch friendsCheck = (Switch) findViewById(R.id.onlyFriendsSwitch);
 
         if(friendsCheck.isChecked()) {
-            friends = "It actually goddamn works";
+            friends = true;
             System.out.println(friends);
         } else {
-            friends = "WE LOST!";
+            friends = false;
             System.out.println(friends);
         }
     }
 
     public void checkOnlyPicture(View view) {
-        Switch onlyPicture = (Switch) findViewById(R.id.onlyPictureSwitch);
+
+        Switch onlyPicture = (Switch) findViewById(R.id.OnlyPictureSwitch);
 
         if(onlyPicture.isChecked()) {
-            pictures = "now weve got fucking pictures";
-            System.out.println(interests);
+            pictures = true;
+            System.out.println(pictures);
         } else {
-            pictures = "no pictures needed";
-            System.out.println(interests);
+            pictures = false;
+            System.out.println(pictures);
         }
     }
 
     public void checkNotifications(View view) {
-        Switch showNotficiations = (Switch) findViewById(R.id.showNotificationSwitch);
 
+        Switch showNotficiations = (Switch) findViewById(R.id.showNotificationSwitch);
         if(showNotficiations.isChecked()) {
-            notifications = "well those notifications are handy....";
-            System.out.println(interests);
+            notifications = true;
+            System.out.println(notifications);
         } else {
-            notifications = "Bullshit notifications";
-            System.out.println(interests);
+            notifications = false;
+            System.out.println(notifications);
         }
     }
 }

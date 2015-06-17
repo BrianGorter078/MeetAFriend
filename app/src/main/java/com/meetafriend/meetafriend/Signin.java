@@ -25,6 +25,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Signin extends Activity implements OnClickListener, LocationListener {
+
     private EditText user, pass;
     private Button bLogin;
     // Progress Dialog
