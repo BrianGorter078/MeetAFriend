@@ -42,7 +42,8 @@ public class Interests extends Activity implements AdapterView.OnItemClickListen
         SearchView sv = (SearchView) findViewById(R.id.interestsSearch);
 
         sv.setIconifiedByDefault(false);
-        sv.setIconified(false);
+        sv.setIconified(true);
+        sv.setFocusable(false);
 
         ListView listview = (ListView) findViewById(R.id.interestsListView);
         listview.setOnItemClickListener(this);
@@ -57,6 +58,7 @@ public class Interests extends Activity implements AdapterView.OnItemClickListen
                     if(amountOfMemberIntrests == 1) {
                         if(memberInterests.get(0).equals(SUGGESTIONS[position])){
                             memberInterests.remove(0);
+                            System.out.println(memberInterests.get(0)); // This system.out.prtinln is for some reason needed otherwise the code will crash.
                         }
                     } else if(memberInterests.get(j).equals(SUGGESTIONS[position])) {
                         memberInterests.remove(j);
@@ -85,13 +87,4 @@ public class Interests extends Activity implements AdapterView.OnItemClickListen
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
-
-//    public void makeHobbies() {
-//        ListView listView1 = (ListView) findViewById(R.id.interestsListView);
-//
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-//                android.R.layout.simple_list_item_1, SUGGESTIONS);
-//
-//        listView1.setAdapter(adapter);
-//    }
 }
