@@ -19,11 +19,17 @@
         android:layout_centerHorizontal="true" />
 
     <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/interestsSearchAnswerListView"
+        android:layout_below="@+id/interestsSearch" />
+
+    <ListView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/interestsSearch"
+        android:layout_below="@+id/interestsSearchAnswerListView"
         android:id="@+id/interestsListView"
-        android:entries="@array/hobbies"/>
+        android:entries="@array/hobbies" />
 
 
 </RelativeLayout>
