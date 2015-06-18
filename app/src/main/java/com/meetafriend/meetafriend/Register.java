@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
@@ -23,13 +24,17 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
 public class Register extends Activity implements View.OnClickListener {
 
     private EditText user, pass, email, age;
+    private DatePicker date_of_birth;
     private Button bLogin;
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -53,9 +58,14 @@ public class Register extends Activity implements View.OnClickListener {
         pass = (EditText) findViewById(R.id.passwordRegister);
         email = (EditText) findViewById(R.id.emailRegister);
         age = (EditText) findViewById(R.id.ageRegister);
+        date_of_birth = (DatePicker) findViewById(R.id.dateOfBirthRegister);
         //gender = (RadioButton) findViewById(R.id.youAreRadiobuttonFemale);
         bLogin = (Button) findViewById(R.id.makeAccountButton);
         bLogin.setOnClickListener(this);
+
+        date_of_birth = (DatePicker) findViewById(R.id.dateOfBirthRegister);
+
+
 
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Register");
@@ -137,8 +147,14 @@ public class Register extends Activity implements View.OnClickListener {
             String register_password = pass.getText().toString();
             String register_emailaddress = email.getText().toString();
             String register_age = "0"; //String register_age = age.getText().toString();
-            //String register_gender = gender.toString();
+            String register_gender = gender;
+            String register_gender_want = gender_want;
             //System.out.println(register_gender);
+            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+            String register_date_of_birth = df.format(new Date(date_of_birth.getYear() - 1900, date_of_birth.getMonth(), date_of_birth.getDayOfMonth()));
+            System.out.println(register_date_of_birth);
+
+
 
             if(user.length()!= 0){
                 try {
@@ -146,8 +162,9 @@ public class Register extends Activity implements View.OnClickListener {
                     params.add(new BasicNameValuePair("username", register_username));
                     params.add(new BasicNameValuePair("password", register_password));
                     params.add(new BasicNameValuePair("email", register_emailaddress));
-                    params.add(new BasicNameValuePair("age", register_age));
-                    //params.add(new BasicNameValuePair("gender", register_gender));
+                    params.add(new BasicNameValuePair("age", register_date_of_birth));
+                    params.add(new BasicNameValuePair("gender", register_gender));
+                    params.add(new BasicNameValuePair("gender_want", register_gender_want));
 
                     //params.add(new BasicNameValuePair("gender", gender));
                     //Log.d("request!", "starting");
@@ -210,24 +227,25 @@ public class Register extends Activity implements View.OnClickListener {
         RadioButton female2 = (RadioButton) findViewById(R.id.youWantRadiobuttonFemale);
 
         if(female.isChecked()) {
-            gender = "F";
+            gender = "f";
             male.setChecked(false);
             female.setChecked(true);
             System.out.println(gender.toString());
         }
         else if(!female.isChecked()) {
+            gender = "m";
             male.setChecked(true);
             female.setChecked(false);
         }
 
         if(female2.isChecked()) {
-            gender = "F";
+            gender_want = "f";
             male2.setChecked(false);
             female2.setChecked(true);
             System.out.println(gender.toString());
         }
         else if(!female2.isChecked()) {
-            gender_want = "M";
+            gender_want = "m";
             male2.setChecked(true);
             female2.setChecked(false);
         }
@@ -240,24 +258,23 @@ public class Register extends Activity implements View.OnClickListener {
         RadioButton female2 = (RadioButton) findViewById(R.id.youWantRadiobuttonFemale);
 
         if(male.isChecked()) {
-            gender = "M";
+            gender = "m";
             male.setChecked(true);
             female.setChecked(false);
-            System.out.println(gender.toString());
         }
         else if(!male.isChecked()) {
+            gender = "f";
             male.setChecked(false);
             female.setChecked(true);
         }
 
         if(male2.isChecked()) {
-            gender_want = "M";
+            gender_want = "m";
             male2.setChecked(true);
             female2.setChecked(false);
-            System.out.println(gender.toString());
         }
         else if(!male2.isChecked()) {
-            gender_want = "F";
+            gender_want = "f";
             male2.setChecked(false);
             female2.setChecked(true);
         }

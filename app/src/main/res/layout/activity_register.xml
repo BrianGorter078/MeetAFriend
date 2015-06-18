@@ -94,7 +94,7 @@
                     <DatePicker
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/datePicker"
+                        android:id="@+id/dateOfBirthRegister"
                         android:calendarViewShown="false"
                         android:datePickerMode="spinner"
                         android:dayOfWeekBackground="#eee"
