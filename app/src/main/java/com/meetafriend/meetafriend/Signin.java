@@ -23,6 +23,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Signin extends Activity implements OnClickListener, LocationListener {
@@ -32,6 +33,7 @@ public class Signin extends Activity implements OnClickListener, LocationListene
     String username;
     String password;
     private EditText user, pass;
+    private TextView txtLat;
     private Button bLogin;
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -72,8 +74,14 @@ public class Signin extends Activity implements OnClickListener, LocationListene
         ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
         toolbarSettings.setVisibility(View.INVISIBLE);
 
+        txtLat = (TextView) findViewById(R.id.textview1);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
+        if (location != null) {
+            txtLat.setText("Latitude:" + location.getLatitude() + ", Longitude:" + location.getLongitude());
+        }
 
         provider = LocationManager.GPS_PROVIDER;
         System.out.println(provider);
@@ -153,16 +161,6 @@ public class Signin extends Activity implements OnClickListener, LocationListene
 
     @Override
     public void onLocationChanged(android.location.Location location) {
-        latitude = location.getLatitude();
-        longitude = location.getLongitude();
-
-        String latitude2 = String.valueOf(latitude);
-        String longitude2 = String.valueOf(longitude);
-
-        location1.setLatitude(latitude2);
-        location1.setLongitude(longitude2);
-
-        System.out.print("Nieuwe locatie !!" + latitude2 + "" + longitude2);
     }
 
     @Override
@@ -205,9 +203,6 @@ public class Signin extends Activity implements OnClickListener, LocationListene
             LatLongCalculator latLongCalculator = new LatLongCalculator();
             latLongCalculator.offset(latitude, longitude, offsetMeters1, offsetMeters2);
 
-            provider = LocationManager.GPS_PROVIDER;
-            location = locationManager.getLastKnownLocation(provider);
-
             //System.out.print("Yeahhh");
 
             // here Check for success tag
@@ -216,6 +211,7 @@ public class Signin extends Activity implements OnClickListener, LocationListene
             String password = pass.getText().toString();
             String latitude_db = String.valueOf(latitude);
             String longitude_db = String.valueOf(longitude);
+
 
 
             if (Location.isNetworkAvailable(Signin.this)) {

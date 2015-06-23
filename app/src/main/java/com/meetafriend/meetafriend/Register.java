@@ -230,7 +230,6 @@ public class Register extends Activity implements View.OnClickListener {
             gender = "f";
             male.setChecked(false);
             female.setChecked(true);
-            System.out.println(gender.toString());
         }
         else if(!female.isChecked()) {
             gender = "m";
@@ -242,7 +241,6 @@ public class Register extends Activity implements View.OnClickListener {
             gender_want = "f";
             male2.setChecked(false);
             female2.setChecked(true);
-            System.out.println(gender.toString());
         }
         else if(!female2.isChecked()) {
             gender_want = "m";
