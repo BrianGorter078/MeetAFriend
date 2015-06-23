@@ -1,35 +1,24 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.meetafriend.meetafriend.Interests"
-    android:layout_marginBottom="5dp"
-    android:background="#ffffff">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
     <include
         android:id="@+id/tool_bar"
         layout="@layout/toolbar"></include>
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/interestsSearch"
-        android:layout_below="@+id/tool_bar"
-        android:layout_centerHorizontal="true" />
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/interestsSearchAnswerListView"
-        android:layout_below="@+id/interestsSearch" />
-
-    <ListView
+    <!-- Editext for Search -->
+    <EditText android:id="@+id/inputSearch"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/interestsSearchAnswerListView"
-        android:id="@+id/interestsListView"
-        android:entries="@array/hobbies" />
+        android:hint="Search interests.."
+        android:inputType="textVisiblePassword"/>
 
+    <!-- List View -->
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 
-</RelativeLayout>
+</LinearLayout>
