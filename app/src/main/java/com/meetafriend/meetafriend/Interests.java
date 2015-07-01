@@ -128,8 +128,6 @@ public class Interests extends FragmentActivity {
 
                     if (memberInterests.isEmpty()) {
                         memberInterests.add(textView.getText().toString());
-                    } else if (memberInterests.size() > 9) {
-                        System.out.println("You cant add anything anymore");
                     } else if (alreadyChecked == false) {
                         memberInterests.add(textView.getText().toString());
                         alreadyChecked = true;
