@@ -3,6 +3,7 @@ package com.meetafriend.meetafriend;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
@@ -142,6 +143,39 @@ public class Interests extends FragmentActivity {
                 System.out.println(memberInterests);
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences sp = getSharedPreferences("Interests", 0);
+        SharedPreferences.Editor mEdit1 = sp.edit();
+        mEdit1.putInt("Status_size", memberInterests.size()); /* sKey is an array */
+
+        for(int i=0;i<memberInterests.size();i++)
+        {
+            mEdit1.remove("Interests" + i);
+            mEdit1.putString("Interests" + i, memberInterests.get(i));
+        }
+
+        mEdit1.commit();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SharedPreferences sp = getSharedPreferences("Interests", 0);
+        SharedPreferences.Editor mEdit1 = sp.edit();
+        mEdit1.putInt("Status_size", memberInterests.size()); /* sKey is an array */
+
+        for(int i=0;i<memberInterests.size();i++)
+        {
+            mEdit1.remove("Interests" + i);
+            mEdit1.putString("Interests" + i, memberInterests.get(i));
+        }
+
+        mEdit1.commit();
     }
 
     public void settings(View view) {
