@@ -181,4 +181,8 @@ public class Interests extends FragmentActivity {
         startActivity(intent);
     }
 
+    public void back(View view) {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
 }
