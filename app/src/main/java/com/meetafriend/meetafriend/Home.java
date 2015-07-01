@@ -115,11 +115,11 @@ public class Home extends Activity implements LocationListener {
 
 
     if (firstTime == true) {
-        Intent intent = new Intent(this, Search.class);
+        Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
 
 
-        edit.putBoolean("FirstTime" , false);
+        edit.putBoolean("FirstTime", false);
         edit.commit();
     }
         else

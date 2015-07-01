@@ -13,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tool_bar"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
@@ -22,10 +22,11 @@
             android:layout_height="wrap_content"
             android:text="@string/Age"
             android:id="@+id/age"
-            android:layout_marginLeft="53dp"
-            android:layout_marginStart="53dp"
-            android:layout_marginBottom="29dp"
-            android:layout_above="@+id/gender"
+            android:textSize="15dp"
+            android:layout_marginLeft="51dp"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="159dp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -34,17 +35,20 @@
             android:layout_height="wrap_content"
             android:text="@string/Gender"
             android:id="@+id/gender"
-            android:layout_centerVertical="true"
+            android:textSize="15dp"
+            android:layout_below="@+id/age"
             android:layout_alignLeft="@+id/age"
-            android:layout_alignStart="@+id/age" />
+            android:layout_alignStart="@+id/age"
+            android:layout_marginTop="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Interests"
             android:id="@+id/interests"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="99dp"
             android:layout_below="@+id/genderMatch"
+            android:textSize="20dp"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -52,22 +56,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/ageMatch"
             android:layout_alignTop="@id/age"
-            android:layout_alignLeft="@+id/usernameMatch"
-            android:layout_alignStart="@+id/usernameMatch" />
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/genderMatch"
             android:layout_alignTop="@+id/gender"
-            android:layout_alignLeft="@+id/usernameMatch"
-            android:layout_alignStart="@+id/usernameMatch" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:id="@+id/usernameMatch"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -77,6 +72,14 @@
             android:layout_marginTop="39dp"
             android:layout_below="@+id/interests"
             android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/usernameMatch"
+            android:layout_above="@+id/ageMatch"
+            android:layout_marginBottom="34dp"
+            android:layout_alignStart="@+id/interestsMatch" />
 
     </RelativeLayout>
 

@@ -23,7 +23,7 @@
     <string name="title_activity_found">Found</string>
     <string name="title_activity_search">Search</string>
     <string name="title_activity_edit_profile">EditProfile</string>
-    <string name="editProfile">Edit your profile</string>
+    <string name="editProfile">Edit interests</string>
     <string name="sameInterests">Same interests</string>
     <string name="searchFor"><b>Search for:</b></string>
     <string name="male">Male</string>

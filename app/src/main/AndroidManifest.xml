@@ -58,16 +58,6 @@
             android:label="@string/title_activity_found"
             android:screenOrientation="portrait">
         </activity>
-        <activity
-            android:name=".Search"
-            android:label="@string/title_activity_search"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name=".EditProfile"
-            android:label="@string/title_activity_edit_profile"
-            android:screenOrientation="portrait">
-        </activity>
     </application>
 
 </manifest>
