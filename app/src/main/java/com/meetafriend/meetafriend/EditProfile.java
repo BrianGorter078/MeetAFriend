@@ -11,27 +11,24 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 
-public class Friends extends Activity {
+public class EditProfile extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_friends);
+        setContentView(R.layout.activity_edit_profile);
 
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
-        toolbarTextview.setText("Friends");
-
-        ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
-        toolbarFriends.setClickable(false);
-        toolbarFriends.setVisibility(View.INVISIBLE);
-
-        ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
-        toolbarSettings.setClickable(false);
-        toolbarSettings.setVisibility(View.INVISIBLE);
+        toolbarTextview.setText("Edit profile");
 
         ImageButton toolbarSubmitInterests = (ImageButton) findViewById(R.id.toolbarSubmitInterests);
         toolbarSubmitInterests.setClickable(false);
         toolbarSubmitInterests.setVisibility(View.INVISIBLE);
+    }
+
+    public void friends(View view) {
+        Intent intent = new Intent(this, Friends.class);
+        startActivity(intent);
     }
 
     public void settings(View view) {
@@ -40,7 +37,7 @@ public class Friends extends Activity {
     }
 
     public void back(View view) {
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
 }

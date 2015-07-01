@@ -69,6 +69,9 @@ public class Register extends Activity implements View.OnClickListener {
 
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Register");
+        ImageButton toolbarSubmitInterests = (ImageButton) findViewById(R.id.toolbarSubmitInterests);
+        toolbarSubmitInterests.setClickable(false);
+        toolbarSubmitInterests.setVisibility(View.INVISIBLE);
 //        ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
 //        toolbarFriends.setVisibility(View.INVISIBLE);
 //        ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);

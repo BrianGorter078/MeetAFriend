@@ -36,5 +36,15 @@
         android:textSize="20dp"
         android:id="@+id/toolbarTextview"/>
 
+    <ImageButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="@drawable/ic_arrow"
+        android:layout_gravity="right"
+        android:onClick="submitInterests"
+        android:id="@+id/toolbarSubmitInterests"
+        android:layout_marginRight="11dp"
+        />
+
 </android.support.v7.widget.Toolbar>
 
