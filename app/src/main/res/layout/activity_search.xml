@@ -164,6 +164,7 @@
         android:layout_height="wrap_content"
         android:text="@string/meetafriend"
         android:id="@+id/button3"
+        android:onClick="MeetAfriend"
         android:layout_marginTop="33dp"
         android:layout_below="@+id/textView12"
         android:layout_centerHorizontal="true" />

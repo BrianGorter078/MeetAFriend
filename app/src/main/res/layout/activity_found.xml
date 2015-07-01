@@ -10,37 +10,75 @@
         android:id="@+id/tool_bar"
         layout="@layout/toolbar"></include>
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/dontChat"
-        android:id="@+id/dontChat"
-        android:background="@drawable/signinbutton"
-        android:layout_marginBottom="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Chat"
-        android:background="@drawable/signinbutton"
-        android:id="@+id/Chat"
-        android:layout_alignTop="@+id/dontChat"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_marginTop="41dp"
-        android:background="@drawable/profileplaceholder"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/tool_bar"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Age"
+            android:id="@+id/age"
+            android:layout_marginLeft="53dp"
+            android:layout_marginStart="53dp"
+            android:layout_marginBottom="29dp"
+            android:layout_above="@+id/gender"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Gender"
+            android:id="@+id/gender"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/age"
+            android:layout_alignStart="@+id/age" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Interests"
+            android:id="@+id/interests"
+            android:layout_marginTop="34dp"
+            android:layout_below="@+id/genderMatch"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ageMatch"
+            android:layout_alignTop="@id/age"
+            android:layout_alignLeft="@+id/usernameMatch"
+            android:layout_alignStart="@+id/usernameMatch" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/genderMatch"
+            android:layout_alignTop="@+id/gender"
+            android:layout_alignLeft="@+id/usernameMatch"
+            android:layout_alignStart="@+id/usernameMatch" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:id="@+id/usernameMatch"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/interestsMatch"
+            android:layout_marginTop="39dp"
+            android:layout_below="@+id/interests"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

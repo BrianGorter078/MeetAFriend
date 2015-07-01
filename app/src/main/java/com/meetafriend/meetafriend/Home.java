@@ -3,6 +3,7 @@ package com.meetafriend.meetafriend;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.location.Criteria;
 import android.location.Location;
@@ -30,7 +31,7 @@ public class Home extends Activity implements LocationListener {
     EditText pEdit;
     private String xpassword = "123";
     private String xusername = "brian";
-
+    boolean firstTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,10 +107,26 @@ public class Home extends Activity implements LocationListener {
 
     public void meetSomeone(View view) {
 
+        SharedPreferences sp = getSharedPreferences("First",0);
+        SharedPreferences.Editor edit = sp.edit();
+        firstTime = sp.getBoolean("FirstTime", true);
 
-        Intent intent = new Intent(this, Interests.class);
+        System.out.println(firstTime);
+
+
+    if (firstTime == true) {
+        Intent intent = new Intent(this, Search.class);
         startActivity(intent);
 
+
+        edit.putBoolean("FirstTime" , false);
+        edit.commit();
+    }
+        else
+    {
+        Intent intent = new Intent(this, Found.class);
+        startActivity(intent);
+    }
 
     }
 

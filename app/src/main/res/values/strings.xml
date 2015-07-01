@@ -55,5 +55,9 @@
     <string name="logOut">Logout</string>
     <string name="accountSettings">Account Settings</string>
     <string name="yourChoice">Your Choices:</string>
+    <string name="Name">Name :</string>
+    <string name="Age">Age :</string>
+    <string name="Gender">Gender :</string>
+    <string name="Interests">Interests :</string>
 
 </resources>

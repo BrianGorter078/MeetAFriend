@@ -24,7 +24,8 @@
         android:layout_alignParentBottom="true"
         android:clickable="false"
         android:backgroundTintMode="add"
-        android:background="#70FFFFFF">
+        android:background="#70FFFFFF"
+        android:layout_marginBottom="40dp">
 
         <RelativeLayout
             android:layout_width="fill_parent"
