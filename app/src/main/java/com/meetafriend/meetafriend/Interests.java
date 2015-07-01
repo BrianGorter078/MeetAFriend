@@ -52,6 +52,8 @@ public class Interests extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interests);
 
+
+
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Interests");
         ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
