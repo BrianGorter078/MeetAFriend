@@ -73,6 +73,9 @@ public class Signin extends Activity implements OnClickListener, LocationListene
         toolbarFriends.setVisibility(View.INVISIBLE);
         ImageButton toolbarSettings = (ImageButton) findViewById(R.id.toolbarSettings);
         toolbarSettings.setVisibility(View.INVISIBLE);
+        ImageButton toolbarSubmitInterests = (ImageButton) findViewById(R.id.toolbarSubmitInterests);
+        toolbarSubmitInterests.setClickable(false);
+        toolbarSubmitInterests.setVisibility(View.INVISIBLE);
 
         txtLat = (TextView) findViewById(R.id.textview1);
 

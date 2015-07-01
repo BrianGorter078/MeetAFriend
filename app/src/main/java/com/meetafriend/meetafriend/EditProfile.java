@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -19,6 +20,10 @@ public class EditProfile extends Activity {
 
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Edit profile");
+
+        ImageButton toolbarSubmitInterests = (ImageButton) findViewById(R.id.toolbarSubmitInterests);
+        toolbarSubmitInterests.setClickable(false);
+        toolbarSubmitInterests.setVisibility(View.INVISIBLE);
     }
 
     public void friends(View view) {
