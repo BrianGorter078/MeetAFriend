@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +31,17 @@ public class Found extends Activity {
         TextView age = (TextView) findViewById(R.id.ageMatch);
         TextView interests = (TextView) findViewById(R.id.interestsMatch);
         TextView gender = (TextView) findViewById(R.id.genderMatch);
+
+
+        ImageButton home = (ImageButton) findViewById(R.id.toolbarSubmitInterests);
+        home.setEnabled(false);
+        home.setVisibility(View.INVISIBLE);
+        ImageButton settings = (ImageButton) findViewById(R.id.toolbarSettings);
+        settings.setEnabled(false);
+        settings.setVisibility(View.INVISIBLE);
+        ImageButton friends = (ImageButton) findViewById(R.id.toolbarFriends);
+        friends.setEnabled(false);
+        friends.setVisibility(View.INVISIBLE);
 
 
         name.setText(matchName);

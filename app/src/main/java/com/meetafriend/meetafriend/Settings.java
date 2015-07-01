@@ -44,9 +44,6 @@ public class Settings extends Activity {
         ImageButton toolbarFriends = (ImageButton) findViewById(R.id.toolbarFriends);
         toolbarFriends.setEnabled(false);
         toolbarFriends.setVisibility(View.INVISIBLE);
-        ImageButton toolbarSubmitInterests = (ImageButton) findViewById(R.id.toolbarSubmitInterests);
-        toolbarSubmitInterests.setClickable(false);
-        toolbarSubmitInterests.setVisibility(View.INVISIBLE);
 
         TextView toolbarTextview = (TextView) findViewById(R.id.toolbarTextview);
         toolbarTextview.setText("Settings");
