@@ -59,5 +59,6 @@
     <string name="Age">Age :</string>
     <string name="Gender">Gender :</string>
     <string name="Interests">Interests :</string>
+    <string name="MyInterests">My interests :</string>
 
 </resources>
