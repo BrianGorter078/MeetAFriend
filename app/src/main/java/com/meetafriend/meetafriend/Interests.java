@@ -137,10 +137,7 @@ public class Interests extends FragmentActivity {
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-
-                System.out.println(memberInterests.size());
                 alreadyChecked = false;
-                System.out.println(memberInterests);
             }
         });
     }
@@ -159,6 +156,17 @@ public class Interests extends FragmentActivity {
         }
 
         mEdit1.commit();
+
+        SharedPreferences sp1 = getSharedPreferences("OtherInterests", 0);
+        SharedPreferences.Editor mEdit2 = sp1.edit();
+
+        for(int i=0; i<SUGGESTIONS.length ;i++)
+        {
+            mEdit2.remove("Interests" + i);
+            mEdit2.putString("Interests" + i, SUGGESTIONS[i]);
+        }
+
+        mEdit2.apply();
     }
 
     @Override
@@ -167,7 +175,6 @@ public class Interests extends FragmentActivity {
 
         SharedPreferences sp = getSharedPreferences("Interests", 0);
         SharedPreferences.Editor mEdit1 = sp.edit();
-        mEdit1.putInt("Status_size", memberInterests.size()); /* sKey is an array */
 
         for(int i=0;i<memberInterests.size();i++)
         {
@@ -175,7 +182,19 @@ public class Interests extends FragmentActivity {
             mEdit1.putString("Interests" + i, memberInterests.get(i));
         }
 
-        mEdit1.commit();
+        mEdit1.apply();
+
+
+        SharedPreferences sp1 = getSharedPreferences("OtherInterests", 0);
+        SharedPreferences.Editor mEdit2 = sp1.edit();
+
+        for(int i=0; i<SUGGESTIONS.length ;i++)
+        {
+            mEdit2.remove("Interests" + i);
+            mEdit2.putString("Interests" + i, SUGGESTIONS[i]);
+        }
+
+        mEdit2.apply();
     }
 
     public void settings(View view) {
