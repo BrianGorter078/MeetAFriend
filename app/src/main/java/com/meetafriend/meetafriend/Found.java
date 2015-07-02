@@ -23,6 +23,9 @@ public class Found extends Activity {
     private String spInterests;
     private ArrayList<String> myInterests = new ArrayList<>();
     private String theInterests;
+    private String otherInterest;
+    private ArrayList<String> otherInterets = new ArrayList<>();
+    private String theOtherInterests;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,7 @@ public class Found extends Activity {
         TextView age = (TextView) findViewById(R.id.ageMatch);
         TextView interests = (TextView) findViewById(R.id.interestsMatch);
         TextView gender = (TextView) findViewById(R.id.genderMatch);
-
+        TextView otherInterests = (TextView) findViewById(R.id.othetIntersts);
 
         ImageButton home = (ImageButton) findViewById(R.id.toolbarSubmitInterests);
         home.setEnabled(false);
@@ -71,9 +74,28 @@ public class Found extends Activity {
             theInterests =  theInterests + ", " + myInterests.get(a);
         }
 
+        SharedPreferences sp2 = getSharedPreferences("OtherInterests", 0);
+
+        for (int i = 0; i < 307; i++)
+        {
+            if(Math.random() >= 0.95) {
+                otherInterest = sp2.getString("Interests" + i, null);
+
+                if (otherInterest != null) {
+                    otherInterets.add(otherInterest);
+                }
+            }
+        }
+
+
+        for(int a = 0; a < otherInterets.size() ; a++)
+        {
+            theOtherInterests =  theOtherInterests + ", " + otherInterets.get(a);
+        }
+
         interests.setText(theInterests);
         gender.setText(matchGender);
-
+        otherInterests.setText(theOtherInterests);
     }
 
     public void friends(View view) {

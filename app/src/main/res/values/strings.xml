@@ -56,7 +56,7 @@
     <string name="accountSettings">Account Settings</string>
     <string name="yourChoice">Your Choices:</string>
     <string name="Name">Name :</string>
-    <string name="Age">Age :</string>
+    <string name="Age">Date of birth :</string>
     <string name="Gender">Gender :</string>
     <string name="Interests">Interests :</string>
     <string name="MyInterests">My interests :</string>
